@@ -1,28 +1,32 @@
-<nav class="container py-3 py-lg-2">
-
-    <div class="d-flex justify-content-between align-items-start d-lg-block">
-        <div class="flex-column flex-lg-row d-flex justify-content-lg-between align-items-lg-center">
-            <div class="logo">
-                <img src="assets/images/Group 33062.png" alt="DATALEX">
+<nav 
+#nav
+class="section-bg  py-3 py-lg-2 fixed-top">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-start d-lg-block">
+            <div class="flex-column flex-lg-row d-flex justify-content-lg-between align-items-lg-center">
+                <div class="logo">
+                    <img src="assets/images/Group 33062.png" alt="DATALEX">
+                </div>
+                <!--  -->
+                <ul 
+                [class.d-none]="!openNav"
+                class="main   flex-lg-row d-lg-flex">
+                    <li *ngFor="let link of navbarLinks">
+                        <a [routerLink]="link?.route">
+                            {{link?.name}}
+                        </a>
+                    </li>
+                </ul>
+                <!--  -->
+                <a [class.d-none]="!openNav" class="signup d-lg-inline-block" routerLink="/auth/signup">Sign Up</a>
             </div>
-            <!--  -->
-            <ul 
-            [class.d-none]="!openNav"
-            class="main   flex-lg-row d-lg-flex">
-                <li *ngFor="let link of navbarLinks">
-                    <a [routerLink]="link?.route">
-                        {{link?.name}}
-                    </a>
-                </li>
-            </ul>
-            <!--  -->
-            <a [class.d-none]="!openNav" class="signup d-lg-inline-block" routerLink="/auth/signup">Sign Up</a>
+            
+            <button 
+            (click)="openNav=!openNav"
+            class="bars d-lg-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-        
-        <button 
-        (click)="openNav=!openNav"
-        class="bars d-lg-none">
-            <i class="fa-solid fa-bars"></i>
-        </button>
     </div>
+  
 </nav>

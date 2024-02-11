@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements AfterViewInit {
+  @ViewChild('nav') nav!: ElementRef;
   openNav=false
   navbarLinks:{
     name:string;
@@ -48,4 +49,8 @@ export class NavbarComponent {
       route:''
     }
   ]
+  ngAfterViewInit(): void {
+    var navbarHeight:any = this.nav.nativeElement.clientHeight;
+    document.body.style.paddingTop = navbarHeight + 'px';
+  }
 }
