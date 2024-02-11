@@ -1,0 +1,17 @@
+<section class="container home-images py-5">
+    <article 
+    *ngIf="text"
+    class="text-center mb-5">
+        <h2 class="mb-4 main-heading">{{text.h2}}</h2>
+        <p class="blue-text">{{text.p}}</p>
+    </article>
+    <div class="row">
+        <div 
+        *ngFor="let item of images"
+        class="col-6 col-md-3 mb-4 mb-md-0 text-center">
+            <div>
+                <img [src]="item" alt="DataLex" class="img-fluid">   
+            </div>
+        </div>
+    </div>
+</section>

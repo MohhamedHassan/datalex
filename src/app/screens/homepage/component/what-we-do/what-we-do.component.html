@@ -1,0 +1,16 @@
+<section class="section-bg">
+    <div class="container py-5 ">
+        <h2 class="text-center mb-5 main-heading">{{h2}}</h2>
+        <div class="row">
+            <div
+            *ngFor="let item of data"
+            class="col-md-6 text-center mb-4 mb-md-0">
+                <div class="p-4">           
+                    <h3 class="sub-heading">{{item?.h3}}</h3>
+                    <p class="blue-text">{{item?.p}}</p>
+                    <a [routerLink]="item?.route" class="main-btn main-btn-small">{{item?.a}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

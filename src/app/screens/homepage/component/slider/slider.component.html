@@ -1,0 +1,33 @@
+<section 
+
+class="section-bg pt-5 pb-4" >
+    <owl-carousel-o [options]="customOptions">
+        <ng-template
+        *ngFor="let item of data"
+        carouselSlide>
+            <div class="container">
+                <div 
+                [ngStyle]="{'direction':item.rtl ? 'rtl' : 'ltr'}"
+                class="row align-items-center ">
+                    <div class="col-md-6 mb-4 mb-md-0 text-start ">
+                        <div 
+                        [ngClass]="{'pe-md-5': !item?.rtl,'ps-md-5': item?.rtl,}"
+                        class="pe-0 ps-0">
+                            <h2 class="main-heading">{{item?.h1}}</h2>
+                            <p class="main-text">{{item?.paragraph}}</p>
+                            <a 
+                            [class.main-btn-small]="!item?.btnBig"
+                            [routerLink]="item?.route" class="main-btn">{{item?.linkText}}</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <img [src]="item?.imgSrc"  [alt]="item?.imageAlt" class="img-fluid">
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </ng-template>   
+      </owl-carousel-o>
+</section>

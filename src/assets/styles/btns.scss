@@ -1,0 +1,18 @@
+.main-btn {
+    display: inline-block;
+    background-color: var(--main);
+    color: var(--white);    
+    padding: .6rem 5rem;
+    border-radius: 4.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: .5s;
+    border: 2px solid var(--main);
+    &:hover {
+        background-color: var(--white);
+        color: var(--main);    
+    }
+}
+.main-btn-small {
+    padding: .6rem 2.5rem;
+}

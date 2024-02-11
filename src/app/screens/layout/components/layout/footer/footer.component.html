@@ -1,0 +1,72 @@
+<footer>
+    <div class="upper py-5">
+        <div class="container">
+            <div class="row">
+                <div 
+                *ngFor="let item of upper"
+                class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center">
+                            <img [src]="item?.img" alt="footer" class="mb-3">
+                            <h2>{{item?.h2}}</h2>
+                            <p>{{item?.p}}</p>
+                            <p class="p2">{{item?.p2}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end upper -->
+    <div class="lower pt-5 pb-2">
+        <div class="container">
+            <div class="row">
+                <div 
+                class="col-md-4 mb-4 mb-md-0">
+                    <div>
+                        <img src="assets/images/Group 33062.png" alt="DATALEX" class="d-block mb-3" >   
+                        <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.</p> 
+                        <ul class="socialmedia">
+                            <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--  -->
+                <div 
+                class="col-md-4 mb-4 mb-md-0">
+                    <div>
+                        <h2>Quick link</h2>
+                        <ul class="links">
+                            <li><a href="">About</a></li>
+                            <li><a href="">Features</a></li>
+                            <li><a href="">Screenshot</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--  -->
+                <div 
+                class="col-md-4 mb-4 mb-md-0">
+                    <div>
+                        <h2>news letter</h2>  
+                        <p class="p2 mb-4">Subscribe our newsletter to get our latest
+                            update & news</p> 
+                        <form>
+                            <input type="text" placeholder="Your email address">
+                            <img src="assets/images/send-plane-2-fill.png" alt="send">
+                        </form>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+            <!--  -->
+            <hr class="bg-white">
+            <p class="text-center m-0">
+                <i class="fa-regular fa-copyright"></i>
+                Copyright 2021 .Text text. All Right Reserved.
+            </p>
+        </div>
+    </div>
+    <!-- end lower -->
+</footer>

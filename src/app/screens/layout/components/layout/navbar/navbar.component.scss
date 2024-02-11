@@ -1,0 +1,42 @@
+nav {
+    .logo {
+        img {
+            width:6.25rem
+        }
+    }
+    ul.main {
+        a {
+            color: var(--black);
+            text-decoration: none;
+            display: inline-block;
+            padding: 1.25rem;
+            transition: .5s;
+            &:hover {
+                color: var(--main);
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            a {
+                padding:1.25rem 0 !important;
+            }
+        }
+    }
+    .signup {
+        border: 1px solid var(--main);
+        border-radius: 4.25rem;
+        color: var(--main);
+        padding: .6rem 2rem;
+        width: fit-content;
+        transition: .5s;
+        &:hover {
+            background-color: var(--main);
+            color:var(--white)
+        }
+    }
+    button.bars {
+        color: var(--main);
+        background-color: transparent;
+        border: 2px solid var(--main);
+        border-radius: 5px;        
+    }
+}
