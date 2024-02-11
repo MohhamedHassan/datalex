@@ -1,0 +1,50 @@
+h2.main-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 3rem;
+}
+
+h3.sub-heading {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 2.25rem;
+}
+h3.sub-heading-small {
+    font-size: 1.25rem;
+}
+
+p.main-text {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 1.9rem;
+}
+
+p.main-text2 {
+    color: var(--black2);
+    font-size: .99rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+p.blue-text {
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+}
+
+.date {
+    font-size: .75rem;
+    line-height: .75rem;
+    font-weight: 400;
+    color:var(--date);
+}
+.date.bold {
+    font-weight: 700;
+}
+.maincolor {
+    color: var(--main);
+}
