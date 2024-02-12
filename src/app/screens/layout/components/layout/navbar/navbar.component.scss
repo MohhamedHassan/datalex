@@ -24,12 +24,11 @@ nav {
                 cursor: pointer;
                 position: relative;
                 z-index: 11111;
-            }
-            >a.nolinks {
                 &:hover {
                     color: var(--main);
                 }
             }
+           
 
             @media only screen and (max-width: 992px) {
                 >a {

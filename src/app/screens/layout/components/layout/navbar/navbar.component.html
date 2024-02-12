@@ -29,7 +29,6 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact:true}"
                         *ngIf="!link.subLinks?.length"
-                        [class.nolinks]="!link.subLinks?.length"
                         [routerLink]="link?.route">
                             {{link?.name}}
                         </a>
