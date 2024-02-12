@@ -1,4 +1,5 @@
 <nav 
+(click)="do($event)"
 #nav
 class="section-bg  py-3 py-lg-2 fixed-top">
     <div class="container">
@@ -11,7 +12,7 @@ class="section-bg  py-3 py-lg-2 fixed-top">
             <div class="flex-column flex-lg-row d-flex justify-content-lg-between align-items-lg-center">
                 <div class="logo">
                     <a 
-                    (click)="openNav=false"
+                    (click)="openNav=false;selcetedSubMenu=-1"
                     routerLink="/">
                         <img src="assets/images/Group 33062.png" alt="DATALEX">
                     </a>
@@ -20,9 +21,11 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                 <ul 
                 [class.d-none]="!openNav"
                 class="main   flex-lg-row d-lg-flex">
-                    <li *ngFor="let link of navbarLinks">
+                    <li     
+                    
+                    *ngFor="let link of navbarLinks;let i = index">
                         <a 
-                        (click)="openNav=false"
+                        (click)="openNav=false;selcetedSubMenu=-1"
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact:true}"
                         *ngIf="!link.subLinks?.length"
@@ -30,17 +33,22 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                         [routerLink]="link?.route">
                             {{link?.name}}
                         </a>
+                        <!--  -->
                         <a 
+                        class="withlinks"
+                        (click)="selcetedSubMenu = selcetedSubMenu ==i ? -1 : i"
                         *ngIf="link.subLinks?.length">
                             {{link?.name}}
                             <span class="mx-1"></span>
                             <img src="assets/images/Vector 9.png" alt="arrow">
+                            
                         </a>
                         <div 
+                        [class.d-none]="selcetedSubMenu!=i"
                         *ngIf="link.subLinks?.length"
                         class="sub-menu">
                             <a  
-                            (click)="openNav=false"
+                            (click)="openNav=false;selcetedSubMenu=-1"
                             routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact:true}"
                             class="p-3"
@@ -51,7 +59,7 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                 </ul>
                 <!--  -->
                 <a [class.d-none]="!openNav" class="signup d-lg-inline-block"
-                (click)="openNav=false"
+                (click)="openNav=false;selcetedSubMenu=-1"
                 routerLink="/auth/signup">Sign Up</a>
             </div>
             
@@ -62,5 +70,7 @@ class="section-bg  py-3 py-lg-2 fixed-top">
             </button>
         </div>
     </div>
-  
+    <div class="cover d-none d-lg-block"
+    (click)="selcetedSubMenu=-1"
+    *ngIf="selcetedSubMenu!=-1"></div>
 </nav>

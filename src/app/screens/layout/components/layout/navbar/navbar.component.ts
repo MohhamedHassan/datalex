@@ -8,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 export class NavbarComponent implements AfterViewInit {
   @ViewChild('nav') nav!: ElementRef;
   openNav=false
+  selcetedSubMenu=-1
   navbarLinks:{
     name:string;
     route:string;
@@ -74,5 +75,13 @@ export class NavbarComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     var navbarHeight:any = this.nav.nativeElement.clientHeight;
     document.body.style.paddingTop = navbarHeight + 'px';
+  }
+  do(event:any) {
+    console.log(event)
+    if(event.target.nodeName!='A' && event.target.alt!='arrow') {
+      this.selcetedSubMenu=-1
+      console.log(event.target.alt)
+      console.log(event.target.nodeName,event)
+    }
   }
 }
