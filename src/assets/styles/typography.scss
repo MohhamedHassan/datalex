@@ -42,6 +42,12 @@ p.blue-text {
     font-weight: 400;
     color:var(--date);
 }
+a.date {
+    transition: .5s;
+    &:hover {
+        color:var(--black)
+    }
+}
 .date.bold {
     font-weight: 700;
 }

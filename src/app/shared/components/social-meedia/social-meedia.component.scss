@@ -10,6 +10,7 @@ ul.socialmedia {
             margin-right: 1.3rem;
             position: relative;
             display: inline-block;
+            transition: .5s;
             &::after {
                 content: "";
                 position: absolute;
@@ -18,6 +19,9 @@ ul.socialmedia {
                 width: 1px;
                 height: 1rem;
                 background-color: var(--white);
+            }
+            &:hover {
+                color:var(--main) !important
             }
         }
         a.white {
