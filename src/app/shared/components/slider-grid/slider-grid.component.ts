@@ -3,17 +3,18 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Resources } from 'src/app/screens/models/resources';
 
 @Component({
-  selector: 'app-resources',
-  templateUrl: './resources.component.html',
-  styleUrls: ['./resources.component.scss']
+  selector: 'app-slider-grid',
+  templateUrl: './slider-grid.component.html',
+  styleUrls: ['./slider-grid.component.scss']
 })
-export class ResourcesComponent {
+export class SliderGridComponent {
   @Input() data:Resources[]=[]
+  @Input() title:string=''
   customOptions: OwlOptions = {
     loop: true,
     autoplay:false,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     dots: true,
     navSpeed: 700,
@@ -27,8 +28,9 @@ export class ResourcesComponent {
       },
       940: {
         items: 3
-      }
+      },
     },
+    margin:30,
     nav: false
   }
 }

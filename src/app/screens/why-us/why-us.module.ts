@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ServicesRoutingModule } from './services-routing.module';
-import { ServicesComponent } from './components/services/services.component';
+import { WhyUsRoutingModule } from './why-us-routing.module';
+import { WhyUsComponent } from './components/why-us/why-us.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    ServicesComponent
+    WhyUsComponent
   ],
   imports: [
     CommonModule,
-    ServicesRoutingModule,
+    WhyUsRoutingModule,
     SharedModule
   ]
 })
-export class ServicesModule { }
+export class WhyUsModule { }

@@ -1,0 +1,44 @@
+ul.socialmedia {
+    display: flex;
+
+    li {
+
+       
+
+        a {
+            padding-right: 1.3rem;
+            margin-right: 1.3rem;
+            position: relative;
+            display: inline-block;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 2px;
+                right: 0;
+                width: 1px;
+                height: 1rem;
+                background-color: var(--white);
+            }
+        }
+        a.white {
+            color: var(--white);
+            &::after {
+                background-color: var(--white);
+            }
+        }
+        a.black {
+            color: var(--black);
+            &::after {
+                background-color: var(--black);
+            }
+        }
+    }
+
+    li:last-of-type a {
+        padding-right: 0;
+        margin-right: 0;
+        &::after {
+            height: 0
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-taps',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./taps.component.scss']
 })
 export class TapsComponent {
-
+  @Input() lowerContent:boolean=true
 }

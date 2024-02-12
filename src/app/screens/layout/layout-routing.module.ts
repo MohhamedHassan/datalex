@@ -13,6 +13,18 @@ const routes: Routes = [
         loadChildren:() => import('src/app/screens/homepage/homepage.module').then(m => m.HomepageModule)
       },
       {
+        path: 'blog-details',
+        loadChildren:() => import('src/app/screens/blog-details/blog-details.module').then(m => m.BlogDetailsModule)
+      },
+      {
+        path: 'about-us',
+        loadChildren:() => import('src/app/screens/about-us/about-us.module').then(m => m.AboutUsModule)
+      },
+      {
+        path: 'why-us',
+        loadChildren:() => import('src/app/screens/why-us/why-us.module').then(m => m.WhyUsModule)
+      },
+      {
         path: 'services',
         loadChildren:() => import('src/app/screens/services/services.module').then(m => m.ServicesModule)
       }

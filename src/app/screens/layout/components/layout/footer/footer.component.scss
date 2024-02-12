@@ -33,31 +33,7 @@ footer {
             width: 9.75rem
         }
 
-        ul.socialmedia {
-            display: flex;
-
-            li {
-                padding-right: 1.3rem;
-                margin-right: 1.3rem;
-                position: relative;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 2px;
-                    right: 0;
-                    width: 1px;
-                    height: 1rem;
-                    background-color: var(--white);
-                }
-            }
-
-            li:last-of-type {
-                &::after {
-                    height: 0
-                }
-            }
-        }
+        
 
         h2 {
             font-size: 1.6rem;

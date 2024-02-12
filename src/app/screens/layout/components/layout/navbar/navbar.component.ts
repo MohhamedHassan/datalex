@@ -20,33 +20,55 @@ export class NavbarComponent implements AfterViewInit {
       subLinks:[
         {
           name:'Datlex 4ai',
-          route:'',
+          route:'/about-us',
         },
         {
           name:'Why Us',
-          route:'',
+          route:'/why-us',
         }
       ]
     },
     {
       name:'Services',
-      route:''
+      route:'/services',
+      subLinks:[
+        {
+          name:'Data Collection',
+          route:'/services',
+        },
+        {
+          name:'Annotation',
+          route:'/services',
+        },
+        {
+          name:'Document Processing',
+          route:'/services',
+        },
+        {
+          name:'Writing Guidelines',
+          route:'/services',
+        },
+        {
+          name:'Conducting Research',
+          route:'/services',
+        }
+      ]
     },
     {
       name:'Products',
-      route:''
+      route:'/notfound'
     },
     {
       name:'Blog',
-      route:''
+      route:'/notfound'
     },
     {
       name:'Jobs',
-      route:''
+      route:'/notfound'
     },
     {
       name:'Contact Us',
-      route:''
+      route:'/notfound'
     }
   ]
   ngAfterViewInit(): void {

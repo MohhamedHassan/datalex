@@ -1,0 +1,16 @@
+.section-header {
+    height: 25vh;
+    background-color: var(--footer-lower);
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1 {
+        font-weight: 500;
+        font-size: 3.1rem;
+        line-height: 3.75rem;
+        color: var(--white);
+    }
+}

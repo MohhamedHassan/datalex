@@ -9,7 +9,9 @@
             </ul>
         </div>
     </div>
-    <div class="content container">
+    <div 
+    *ngIf="lowerContent"
+    class="content container">
         <h2 class="main-heading mb-4">Building Language Resources & datasets</h2>
         <ul class="second-nav mb-5">
             <li class="active">Datasets / Corpora</li>
@@ -49,5 +51,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <p
+        *ngIf="!lowerContent"
+        >Embrace the future of language technology with our state-of-the-art NLP tools. Our tools such as ASR, TTS, sentiment analysis, entity recognition… are meticulously crafted and continuously updated to meet the evolving demands of natural language processing.</p>
     </div>
 </section>

@@ -7,7 +7,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ImagesComponent } from './component/images/images.component';
 import { SliderComponent } from './component/slider/slider.component';
 import { WhatWeDoComponent } from './component/what-we-do/what-we-do.component';
-import { ResourcesComponent } from './component/resources/resources.component';
 
 
 @NgModule({
@@ -15,8 +14,7 @@ import { ResourcesComponent } from './component/resources/resources.component';
     HomepageComponent,
     ImagesComponent,
     SliderComponent,
-    WhatWeDoComponent,
-    ResourcesComponent
+    WhatWeDoComponent
   ],
   imports: [
     CommonModule,

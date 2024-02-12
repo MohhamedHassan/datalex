@@ -12,8 +12,8 @@ export class SliderComponent {
   customOptions: OwlOptions = {
     loop: true,
     autoplay:true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     dots: true,
     navSpeed: 700,
