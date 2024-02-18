@@ -62,15 +62,15 @@ export class NavbarComponent implements AfterViewInit,OnInit {
     },
     {
       name:'Products',
-      route:'/notfound'
+      route:'/products'
     },
     {
       name:'Blog',
-      route:'/notfound'
+      route:'/blogs'
     },
     {
       name:'Jobs',
-      route:'/notfound'
+      route:'/jobs'
     },
     {
       name:'Contact Us',

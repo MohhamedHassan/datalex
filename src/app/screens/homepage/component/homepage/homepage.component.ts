@@ -110,17 +110,17 @@ export class HomepageComponent {
     'assets/images/33 (3).png',
     'assets/images/33 (4).png',
   ]
-  text={h2:'Value Proposition',p:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet. Id vel in nam malesuada.'}
+  text={h2:'Value Proposition',p:'Enhance productivity with automated workflows. Our document processing solutions streamline repetitive tasks, reducing manual effort and allowing your team to focus on higher-value activities.'}
   whatwedo:WhatWeDo[] = [
     {
-      h3:'Lorem Ipsum',
-      p:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet. Id vel in nam malesuada.',
+      h3:'Annotated Corpora',
+      p:'A realm where language meets precision – our Annotated Corpora section. Immerse yourself in a curated collection of meticulously annotated corpora',
       a:'Read more',
       route:'/'
     },
     {
-      h3:'Lorem Ipsum',
-      p:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet. Id vel in nam malesuada.',
+      h3:'Datasets',
+      p:'Our linguistic datasets repository, where innovation and language converge to propel your projects to new heights. Our carefully curated collection ',
       a:'Read more',
       route:'/'
     }
