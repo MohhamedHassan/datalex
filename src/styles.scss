@@ -24,4 +24,10 @@ body{
 .section-bg {
         background-color: var(--section-bg);
 }
+.rt {
+    text-align: right;
+    direction: rtl;
+    
+    font-family: "Noto Sans Arabic", sans-serif !important;
+}
 // end glopal 

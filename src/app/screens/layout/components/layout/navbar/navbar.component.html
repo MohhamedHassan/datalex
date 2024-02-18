@@ -1,5 +1,5 @@
 <nav 
-(click)="do($event)"
+(click)="closeSubMenu($event)"
 #nav
 class="section-bg  py-3 py-lg-2 fixed-top">
     <div class="container">
@@ -35,12 +35,12 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                         <!--  -->
                         <a 
                         class="withlinks"
-                        (click)="selcetedSubMenu = selcetedSubMenu ==i ? -1 : i"
+                        (click)="selcetedSubMenu = selcetedSubMenu == i ? -1 : i"
                         *ngIf="link.subLinks?.length">
                             {{link?.name}}
                             <span class="mx-1"></span>
-                            <img src="assets/images/Vector 9.png" alt="arrow">
-                            
+                            <!-- <img src="assets/images/Vector 9.png" alt="arrow"> -->
+                            <i class="fa-solid fa-chevron-down"></i>
                         </a>
                         <div 
                         [class.d-none]="selcetedSubMenu!=i"
@@ -53,6 +53,42 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                             class="p-3"
                             *ngFor="let item of link?.subLinks"
                             [routerLink]="item.route">{{item.name}}</a>
+                        </div>
+                    </li>
+                    <!-- --- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a 
+                        class="withlinks"
+                        (click)="selcetedSubMenu = selcetedSubMenu == navbarLinks.length ? -1 : navbarLinks.length"
+                        >
+                            {{lang|uppercase}}
+                            <span class="mx-1"></span>
+                            <!-- <img src="assets/images/Vector 9.png" alt="arrow"> -->
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <div 
+                        [class.d-none]="selcetedSubMenu!=navbarLinks.length"
+                        class="sub-menu">
+                            <a  
+                            (click)="openNav=false;selcetedSubMenu=-1;changeLang('en')"
+                            class="p-3">EN</a>
+                            <a  
+                            (click)="openNav=false;selcetedSubMenu=-1;changeLang('ar')"
+                            class="p-3">AR</a>
                         </div>
                     </li>
                 </ul>

@@ -1,3 +1,8 @@
+h1.auth {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+}
 h2.main-heading {
     font-size: 2rem;
     font-weight: 700;
@@ -53,4 +58,10 @@ a.date {
 }
 .maincolor {
     color: var(--main);
+}
+.label {
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
 }

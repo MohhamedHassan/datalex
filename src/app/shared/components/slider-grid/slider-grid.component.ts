@@ -31,6 +31,7 @@ export class SliderGridComponent {
       },
     },
     margin:30,
-    nav: false
+    nav: false,
+    rtl:localStorage.getItem('lang')=='ar' ? true : false
   }
 }

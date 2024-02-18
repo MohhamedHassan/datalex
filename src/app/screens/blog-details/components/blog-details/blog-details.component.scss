@@ -17,3 +17,15 @@
         margin-bottom: 0 !important;
     }
 }
+::ng-deep {
+    .rt {
+        .blog-details {
+            .header {
+                .media {
+                    right: auto !important;
+                    left: 1rem;
+                }
+            }
+        }
+    }
+}

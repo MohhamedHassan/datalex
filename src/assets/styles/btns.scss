@@ -16,3 +16,17 @@
 .main-btn-small {
     padding: .6rem 2.5rem;
 }
+button.auth {
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: var(--footer-lower);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    border: none;
+    width: 100%;
+    transition: .5s;
+    &:hover {
+        background-color: var(--footer-lower-hover);
+    }
+}

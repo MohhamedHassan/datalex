@@ -1,11 +1,16 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent implements AfterViewInit,OnInit {
+  isAuthPage=new BehaviorSubject(false)
+  constructor(private router:Router,public translateService:TranslateService) {}
   @ViewChild('nav') nav!: ElementRef;
   openNav=false
   selcetedSubMenu=-1
@@ -72,16 +77,40 @@ export class NavbarComponent implements AfterViewInit {
       route:'/notfound'
     }
   ]
-  ngAfterViewInit(): void {
-    var navbarHeight:any = this.nav.nativeElement.clientHeight;
-    document.body.style.paddingTop = navbarHeight + 'px';
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isAuthPage.next(this.router.url.includes('auth')) 
+      }
+    });
   }
-  do(event:any) {
-    console.log(event)
-    if(event.target.nodeName!='A' && event.target.alt!='arrow') {
+  ngAfterViewInit(): void {
+    this.isAuthPage.subscribe(res=> {
+      console.log(res)
+      if(!res) {
+        var navbarHeight:any = this.nav.nativeElement.clientHeight;
+        document.body.style.paddingTop = navbarHeight + 'px';
+      }else {
+        document.body.style.paddingTop = '0px';
+      }
+    })
+  }
+  closeSubMenu(event:any) {
+    if(event.target.nodeName!='A' && event.target.nodeName!='I') {
       this.selcetedSubMenu=-1
-      console.log(event.target.alt)
-      console.log(event.target.nodeName,event)
     }
+  }
+  changeLang(lang:string) {
+    if(lang=='ar') {
+      document.body.classList.add('rt')
+    } else {
+      document.body.classList.remove('rt')
+    }
+    this.translateService.use(lang);
+    localStorage.setItem('lang',lang)
+    location.reload()
+  }
+  get lang() {
+    return localStorage.getItem('lang')||'en'
   }
 }

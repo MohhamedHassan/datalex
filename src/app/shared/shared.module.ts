@@ -6,6 +6,9 @@ import { TapsComponent } from './components/taps/taps.component';
 import { SliderGridComponent } from './components/slider-grid/slider-grid.component';
 import { SocialMeediaComponent } from './components/social-meedia/social-meedia.component';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -27,7 +30,9 @@ import { SectionHeaderComponent } from './components/section-header/section-head
     TapsComponent,
     SliderGridComponent,
     SocialMeediaComponent,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    TranslateModule
   ]
 })
 export class SharedModule { }
+

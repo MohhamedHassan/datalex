@@ -1,0 +1,8 @@
+.form-group {
+    ::placeholder{
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: 15px;
+        color: var(--placeholder);
+    }
+}

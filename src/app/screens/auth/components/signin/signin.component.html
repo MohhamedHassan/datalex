@@ -1,1 +1,13 @@
-<p>signin works!</p>
+<h1 class="text-center auth mb-4">{{'welcomeback'|translate}}</h1>
+<form>
+    <app-input placeholder="enteremail" label="email" />
+    <button class="auth mb-3">
+        {{'login'|translate}}
+    </button>
+    <p class="label text-center m-0">
+        {{'Donthaveanaccount'|translate}}
+        <a routerLink="/auth/signup">
+            {{'RegisterNow'|translate}}
+        </a>
+    </p>
+</form>

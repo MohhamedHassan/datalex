@@ -23,6 +23,10 @@ export class SliderComponent {
         items: 1
       }
     },
-    nav: false
+    nav: false,
+    rtl:localStorage.getItem('lang')=='ar' ? true : false
   }
+  get lang() {
+    return localStorage.getItem('lang')||'en'
+  } 
 }

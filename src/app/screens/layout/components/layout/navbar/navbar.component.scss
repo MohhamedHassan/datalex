@@ -16,6 +16,7 @@ nav {
             }
 
             >a {
+                font-size: 1rem;
                 color: var(--black);
                 text-decoration: none;
                 display: inline-block;
@@ -24,13 +25,20 @@ nav {
                 cursor: pointer;
                 position: relative;
                 z-index: 11111;
+                i{ transition: .5s;font-size: 13px}
                 &:hover {
                     color: var(--main);
+                    i {
+                        color: var(--main);
+                    }
                 }
             }
-           
-
-            @media only screen and (max-width: 992px) {
+            @media only screen and (min-width: 992px) and (max-width: 1200px) { 
+                >a {
+                    font-size: .8rem;
+                }
+            }
+            @media only screen and (max-width: 991px) {
                 >a {
                     padding: 1rem 0 !important;
                 }
@@ -63,7 +71,7 @@ nav {
                     line-height: 1.25rem;
                     padding: .6rem 1rem;
                     transition: .5s;
-
+                    cursor: pointer;
                     &:hover {
                         color: var(--main)
                     }
@@ -93,7 +101,7 @@ nav {
         border: 2px solid var(--main);
         border-radius: 5px;
     }
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 991px) {
         overflow: auto;
         max-height: 100vh;
 

@@ -10,7 +10,7 @@ import { WhatWeDo } from 'src/app/screens/models/what-we-do';
 export class HomepageComponent {
   header:Slider[] = [
     {
-      rtl:false,
+      
       h1:'Welcome to DataLex4ai 5',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
@@ -20,7 +20,7 @@ export class HomepageComponent {
       btnBig:true
     },
     {
-      rtl:false,
+      
       h1:'Welcome to DataLex4ai 5',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
@@ -30,7 +30,7 @@ export class HomepageComponent {
       btnBig:true
     },
     {
-      rtl:false,
+      
       h1:'Welcome to DataLex4ai 5',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
@@ -42,7 +42,7 @@ export class HomepageComponent {
   ]
   driver:Slider[] = [
     {
-      rtl:true,
+      
       h1:'Our diverse',
       paragraph:'Our diverse range of annotated datasets serves as a valuable resource for machine learning and artificial intelligence initiatives, fostering innovation across various domains.',
       route:'/',
@@ -51,7 +51,7 @@ export class HomepageComponent {
       imageAlt:'diverse image'
     },
     {
-      rtl:true,
+      
       h1:'Our diverse',
       paragraph:'Our diverse range of annotated datasets serves as a valuable resource for machine learning and artificial intelligence initiatives, fostering innovation across various domains.',
       route:'/',
@@ -60,7 +60,7 @@ export class HomepageComponent {
       imageAlt:'diverse image'
     },
     {
-      rtl:true,
+      
       h1:'Our diverse',
       paragraph:'Our diverse range of annotated datasets serves as a valuable resource for machine learning and artificial intelligence initiatives, fostering innovation across various domains.',
       route:'/',
@@ -71,7 +71,7 @@ export class HomepageComponent {
   ]
   nlpTools:Slider[] = [
     {
-      rtl:false,
+      
       h1:'Cutting-edge NLP tools',
       paragraph:'cutting-edge natural language processing (NLP) tools empower researchers and developers with advanced capabilities, driving the advancement of artificial intelligence, machine learning, and language model development.',
       route:'/',
@@ -80,7 +80,7 @@ export class HomepageComponent {
       imageAlt:'NLP tools image'
     },
     {
-      rtl:false,
+      
       h1:'Cutting-edge NLP tools',
       paragraph:'cutting-edge natural language processing (NLP) tools empower researchers and developers with advanced capabilities, driving the advancement of artificial intelligence, machine learning, and language model development.',
       route:'/',
@@ -89,7 +89,7 @@ export class HomepageComponent {
       imageAlt:'NLP tools image'
     },
     {
-      rtl:false,
+      
       h1:'Cutting-edge NLP tools',
       paragraph:'cutting-edge natural language processing (NLP) tools empower researchers and developers with advanced capabilities, driving the advancement of artificial intelligence, machine learning, and language model development.',
       route:'/',

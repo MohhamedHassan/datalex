@@ -7,12 +7,9 @@ class="section-bg pt-5 pb-4" >
         carouselSlide>
             <div class="container">
                 <div 
-                [ngStyle]="{'direction':item.rtl ? 'rtl' : 'ltr'}"
                 class="row align-items-center ">
-                    <div class="col-md-6 mb-4 mb-md-0 text-start ">
-                        <div 
-                        [ngClass]="{'pe-md-5': !item?.rtl,'ps-md-5': item?.rtl,}"
-                        class="pe-0 ps-0">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div>
                             <h2 class="main-heading">{{item?.h1}}</h2>
                             <p class="main-text">{{item?.paragraph}}</p>
                             <a 

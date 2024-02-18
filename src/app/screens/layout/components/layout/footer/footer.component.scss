@@ -87,3 +87,15 @@ footer {
         }
     }
 }
+::ng-deep {
+    .rt {
+        footer {
+            form {
+                img {
+                    right:  auto !important;
+                    left: 3px !important;
+                }
+            }
+        }
+    }
+}

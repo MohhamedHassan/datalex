@@ -46,3 +46,30 @@ ul.socialmedia {
         }
     }
 }
+::ng-deep {
+    .rt {
+        ul.socialmedia {
+            li {
+        
+               
+        
+                a {
+                    padding-right: 0 !important;
+                    margin-right: 0 !important;
+                    padding-left: 1.3rem;
+                    margin-left: 1.3rem;
+                    &::after {
+                        right: auto !important;
+                        left: 0 !important;
+                    }
+                }
+
+            }
+        
+            li:last-of-type a {
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+        }
+    }
+}

@@ -1,1 +1,15 @@
-<p>signup works!</p>
+<h1 class="text-center auth mb-4">{{'RegistertoGetStarted'|translate}}</h1>
+<form>
+    <app-input placeholder="enteremail" label="email" />
+    <app-input placeholder="enterYourPassword" label="password" type="password"/>
+    <app-input placeholder="password" label="confirmPassword" type="password"/>
+    <button class="auth mb-3">
+       {{'signup'|translate}}
+    </button>
+    <p class="label text-center m-0">
+        {{'haveanaccount'|translate}}
+        <a routerLink="/auth/signin">
+            {{'login'|translate}}
+        </a>
+    </p>
+</form>

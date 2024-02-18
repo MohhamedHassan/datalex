@@ -1,5 +1,4 @@
 export interface Slider {
-    rtl:boolean;
     h1:string;
     paragraph:string;
     route:string;

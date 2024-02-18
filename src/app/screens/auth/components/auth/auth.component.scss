@@ -1,0 +1,51 @@
+.auth {
+    overflow-x: hidden;
+    .right {
+        min-height: 100vh;
+        @media only screen and (min-width: 992px) {
+            height: 100vh;overflow: auto;
+         }
+    }
+    .left {
+        background-image: linear-gradient(180deg, #1290D0 0%, #1290D0 10.44%, #183867 100%);
+        position: relative;
+
+        img.bg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+        }
+
+
+    }
+    img.logo {
+        width: 15rem;
+        z-index: 1;
+        position: relative;
+    }
+    img.logo2 {
+        width: 10rem;
+    }
+    .lang {
+        // position: absolute;
+        // top: 15px;
+        // right: 30px;
+        background-color: transparent;
+        border: none;
+    }
+}
+
+::ng-deep {
+    .sign {
+        a:not(.home) {
+            color: var(--footer-lower);
+            border-bottom: 1px solid var(--footer-lower);
+        }
+    }
+    // .rt {
+    //     .lang {
+    //         right: 15px !important;
+    //     }
+    // }
+}
