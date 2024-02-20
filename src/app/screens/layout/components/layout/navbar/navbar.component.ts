@@ -21,11 +21,11 @@ export class NavbarComponent implements AfterViewInit,OnInit {
       route:string;}[]
   }[] = [
     {
-      name:'About Datlex 4ai',
+      name:'About DataLex4ai',
       route:'/home',
       subLinks:[
         {
-          name:'Datlex 4ai',
+          name:'DataLex4ai',
           route:'/about-us',
         },
         {

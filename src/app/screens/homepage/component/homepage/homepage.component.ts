@@ -11,7 +11,7 @@ export class HomepageComponent {
   header:Slider[] = [
     {
       
-      h1:'Welcome to DataLex4ai 5',
+      h1:'Welcome to DataLex4ai',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
       linkText:'Try for free',
@@ -21,7 +21,7 @@ export class HomepageComponent {
     },
     {
       
-      h1:'Welcome to DataLex4ai 5',
+      h1:'Welcome to DataLex4ai',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
       linkText:'Try for free',
@@ -31,7 +31,7 @@ export class HomepageComponent {
     },
     {
       
-      h1:'Welcome to DataLex4ai 5',
+      h1:'Welcome to DataLex4ai',
       paragraph:'We seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions.',
       route:'/',
       linkText:'Try for free',
