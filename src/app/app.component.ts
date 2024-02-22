@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, first, from, map, of,catchError, fromEvent, interval, Subscription, range, throwError, take, combineLatest, concat, toArray, forkJoin, merge, concatMap, exhaustMap, tap, switchMap, scan, mergeScan, mergeMap } from 'rxjs';
+import { Observable, first, from, map, of,catchError, fromEvent, interval, Subscription, range, throwError, take, combineLatest, concat, toArray, forkJoin, merge, concatMap, exhaustMap, tap, switchMap, scan, mergeScan, mergeMap, BehaviorSubject, audit, auditTime, elementAt, filter, last, skip, skipWhile, takeUntil, takeWhile } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { JQueryStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
 @Component({
@@ -13,15 +13,9 @@ export class AppComponent implements OnInit {
   constructor(private _http:HttpClient,private translateService:TranslateService){}
   ngOnInit(): void {
     this.lang()
-      // let obs1$ = interval(1000)
-      // obs1$.pipe(
-      //  // mergeMap(() => of(1,2,3))
-      // ).subscribe(console.log)
-      //   // 5 + 0 = 5
-      //   // 5 + 1 = 6
-      //   // 6 + 2 = 8
-
+    of(1,2,3,4,5).pipe(takeWhile(val=>val<3)).subscribe(console.log)
     }
+  // 
   getPosts() {
     return this._http.get<any>('https://jsonplaceholder.typicode.com/posts')
   }
