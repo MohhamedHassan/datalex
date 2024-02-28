@@ -1,19 +1,35 @@
 <section class="container py-5">
-    <h2 class="main-heading mb-4">{{title}}</h2>
-    <owl-carousel-o [options]="customOptions">
-        <ng-template *ngFor="let item of data" carouselSlide>
-            <div class="shadowcstm my-2">
+    <h2 
+    *ngIf="data?.header"
+    class="main-heading mb-4">{{data.header | lang : data.header_ar}}</h2>
+    <owl-carousel-o 
+    *ngIf="data?.sections?.length"
+    [options]="customOptions">
+        <ng-template *ngFor="let item of data.sections" carouselSlide>
+            <div 
+            class="shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
                 <div>
-                    <img [src]="item?.img" alt="Resources" class="img-fluid">
+                    <div>
+                        <img 
+                        (load)="setEqualHeight()"
+                        [src]="item?.image?.image" alt="Resources" class="img-fluid">
+                    </div>
+                    <div class="p-3">
+                        <h3 class="sub-heading sub-heading-small">
+                            {{item.header | lang : item.header_ar}}</h3>
+                        <p class="main-text2 mb-0">    
+                              {{(item.content | lang : item.content_ar)|slice:0:200}} 
+                              ...
+                        </p>
+                    </div>
                 </div>
                 <div class="p-3">
-                    <div>
-                        <h3 class="sub-heading sub-heading-small">{{item?.h3}}</h3>
-                        <p class="main-text2 mb-4">{{item?.p}}</p>
-                    </div>
                     <div class="d-flex align-items-center justify-content-between">
-                        <span class="date">{{item?.date}}</span>
-                        <a class="maincolor date bold" [routerLink]="item.route">{{item?.a}}</a>
+                        <span class="date">May 20th 2020</span>
+                        <a class="maincolor date bold" 
+                        [routerLink]="'/blog-details/'+item.id">
+                        {{item.button.text | lang : item.button.text_ar}}
+                        </a>
                     </div>
                 </div>
             </div>

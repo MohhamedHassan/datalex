@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
+import { NotFoundComponent } from 'src/app/shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
         loadChildren:() => import('src/app/screens/homepage/homepage.module').then(m => m.HomepageModule)
       },
       {
-        path: 'blog-details',
+        path: 'blog-details/:id',
         loadChildren:() => import('src/app/screens/blog-details/blog-details.module').then(m => m.BlogDetailsModule)
       },
       {
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'jobs',
         loadChildren:() => import('src/app/screens/jobs/jobs.module').then(m => m.JobsModule)
+      },
+      {
+        path: 'contact-us',
+        loadChildren:() => import('src/app/screens/contact-us/contact-us.module').then(m => m.ContactUsModule)
       }
     ]
   }

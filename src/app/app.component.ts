@@ -1,24 +1,19 @@
-import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, first, from, map, of,catchError, fromEvent, interval, Subscription, range, throwError, take, combineLatest, concat, toArray, forkJoin, merge, concatMap, exhaustMap, tap, switchMap, scan, mergeScan, mergeMap, BehaviorSubject, audit, auditTime, elementAt, filter, last, skip, skipWhile, takeUntil, takeWhile } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
-import { JQueryStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
+import { GlopalService } from './shared/services/glopal.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private _http:HttpClient,private translateService:TranslateService){}
+  constructor(private glopalService:GlopalService,private translateService:TranslateService){}
   ngOnInit(): void {
+    this.glopalService.getNavbarAndFooterData()
+    this.glopalService.getPages()
+
     this.lang()
-    of(1,2,3,4,5).pipe(takeWhile(val=>val<3)).subscribe(console.log)
     }
-  // 
-  getPosts() {
-    return this._http.get<any>('https://jsonplaceholder.typicode.com/posts')
-  }
 
  lang() {
   let lang = localStorage.getItem('lang')||'en'
@@ -29,5 +24,9 @@ export class AppComponent implements OnInit {
   } else {
     document.body.classList.remove('rt')
   }
+ }  
+ @HostListener('window:resize', ['$event'])
+ onResize(event:any) {
+  this.glopalService.bodyPaddingTop=`${document.querySelector('nav')?.offsetHeight}px`
  }
 }

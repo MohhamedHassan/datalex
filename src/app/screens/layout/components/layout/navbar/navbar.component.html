@@ -1,8 +1,9 @@
 <nav 
 (click)="closeSubMenu($event)"
-#nav
 class="section-bg  py-3 py-lg-2 fixed-top">
-    <div class="container">
+    <div 
+    *ngIf="glopalService?.navbar?.length"
+    class="container">
         <div 
         [ngClass]="{
             'align-items-start': openNav,
@@ -14,45 +15,50 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                     <a 
                     (click)="openNav=false;selcetedSubMenu=-1"
                     routerLink="/">
-                        <img src="assets/images/Group 33062.png" alt="DataLex4ai">
+                        <img [src]="glopalService.logo" alt="DataLex4ai">
                     </a>
                 </div>
                 <!--  -->
                 <ul 
+                
                 [class.d-none]="!openNav"
                 class="main   flex-lg-row d-lg-flex">
                     <li     
                     
-                    *ngFor="let link of navbarLinks;let i = index">
+                    *ngFor="let link of glopalService.navbar;let i = index">
                         <a 
                         (click)="openNav=false;selcetedSubMenu=-1"
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact:true}"
-                        *ngIf="!link.subLinks?.length"
-                        [routerLink]="link?.route">
-                            {{link?.name}}
+                        *ngIf="!link.navbar_items?.length"
+                        [routerLink]="link?.link" 
+                    >
+                   
+                        {{link.header | lang :  link.header_ar }}
                         </a>
                         <!--  -->
                         <a 
                         class="withlinks"
                         (click)="selcetedSubMenu = selcetedSubMenu == i ? -1 : i"
-                        *ngIf="link.subLinks?.length">
-                            {{link?.name}}
+                        *ngIf="link.navbar_items?.length">
+                        {{link.header | lang : link.header_ar }}
                             <span class="mx-1"></span>
-                            <!-- <img src="assets/images/Vector 9.png" alt="arrow"> -->
                             <i class="fa-solid fa-chevron-down"></i>
                         </a>
                         <div 
                         [class.d-none]="selcetedSubMenu!=i"
-                        *ngIf="link.subLinks?.length"
+                        *ngIf="link.navbar_items?.length"
                         class="sub-menu">
                             <a  
+                            [routerLink]="item.link"
                             (click)="openNav=false;selcetedSubMenu=-1"
                             routerLinkActive="active"
                             [routerLinkActiveOptions]="{exact:true}"
                             class="p-3"
-                            *ngFor="let item of link?.subLinks"
-                            [routerLink]="item.route">{{item.name}}</a>
+                            *ngFor="let item of link?.navbar_items"
+                          >
+                         
+                          {{item.header |lang : item.header_ar  }}</a>
                         </div>
                     </li>
                     <!-- --- -->
@@ -73,15 +79,14 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                     <li>
                         <a 
                         class="withlinks"
-                        (click)="selcetedSubMenu = selcetedSubMenu == navbarLinks.length ? -1 : navbarLinks.length"
+                        (click)="selcetedSubMenu = selcetedSubMenu == glopalService.navbar.length ? -1 : glopalService.navbar.length"
                         >
                             {{lang|uppercase}}
                             <span class="mx-1"></span>
-                            <!-- <img src="assets/images/Vector 9.png" alt="arrow"> -->
                             <i class="fa-solid fa-chevron-down"></i>
                         </a>
                         <div 
-                        [class.d-none]="selcetedSubMenu!=navbarLinks.length"
+                        [class.d-none]="selcetedSubMenu!=glopalService.navbar.length"
                         class="sub-menu">
                             <a  
                             (click)="openNav=false;selcetedSubMenu=-1;changeLang('en')"

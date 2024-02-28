@@ -1,7 +1,11 @@
-<ul class="socialmedia">
-    <li
-    *ngFor="let link of links"
-    ><a 
-        [class]="color"
-        [href]="link.href"><i [class]="link.icon"></i></a></li>
+<ul
+ *ngIf="glopalService.footer?.social_apps?.length" class="socialmedia">
+    <li 
+    *ngFor="let link of glopalService.footer.social_apps">
+        <a 
+        target="_blank"
+        *ngIf="link.enabled" [class]="color" [href]="link.url">
+            <i  [class]="link?.icon||'fa-solid fa-share'"></i>
+        </a>
+    </li>
 </ul>

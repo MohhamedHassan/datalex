@@ -1,0 +1,39 @@
+<app-section-header 
+*ngIf="pageData?.header"
+[title]="pageData.header | lang : pageData.header_ar" />
+<div class="py-5 container">
+        <section class="why-us ">
+                <h2 class="main-heading small" *ngIf="pageData?.header">{{pageData.header | lang : pageData.header_ar}}</h2>
+                <p 
+                *ngIf="pageData?.content || pageData?.content_ar"
+                class="main-text">
+                        {{pageData.content | lang  : pageData.content_ar}}
+                </p>
+                <p 
+                *ngIf="pageData?.content_2 || pageData?.content_2_ar"
+                class="main-text">
+                        {{pageData.content_2 | lang  : pageData.content_2_ar}}
+                </p>
+            </section>
+            <ng-container *ngIf="sections?.length">
+                <section      
+                *ngFor="let item of sections"   
+                class="why-us">
+                        <h2 class="main-heading small" *ngIf="item.header">{{item.header | lang : item.header_ar}}</h2>
+                        <p 
+                        class="main-text">
+                                {{item.content | lang  : item.content_ar}}
+                        </p>
+                        <p 
+                        class="main-text">
+                                {{item.content_2 | lang  : item.content_2_ar}}
+                        </p>
+               </section>
+
+            </ng-container>
+
+</div>
+
+<app-taps 
+*ngIf="taps?.length"
+[data]="taps"/>

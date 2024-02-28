@@ -1,48 +1,51 @@
-<section class="taps pb-5">
-    <div class="tapsContainer mb-4">
+<section 
+*ngIf="data?.length"
+class="taps pb-5">
+    <div 
+    *ngIf="data?.length"
+    class="tapsContainer mb-4">
         <div class="container">
             <ul class="py-3">
-                <li class="active">Building Language Resources & datasets</li>
-                <li>Document Processing</li>
-                <li>Data Annotation</li>
-                <li>Data Processing</li>
+                <li 
+                (click)="selectedItem=item;
+                selectedSubItem = item?.navbar_items?.length ? item.navbar_items[0] : undefined"
+                [class.active]="selectedItem?.id==item.id"
+                    *ngFor="let item of data"
+                >{{item.header | lang : item.header_ar}}</li>
             </ul>
         </div>
     </div>
     <div 
-    *ngIf="lowerContent"
+    *ngIf="selectedItem"
     class="content container">
-        <h2 class="main-heading mb-4">Building Language Resources & datasets</h2>
-        <ul class="second-nav mb-5">
-            <li class="active">Datasets / Corpora</li>
-            <li>Lexicons/ Ontologies</li>
-            <li>Pretrained data</li>
-            <li>Video Transcription</li>
-            <li>Video Transcription</li>
+        <h2 class="main-heading mb-4">{{selectedItem.header | lang : selectedItem.header_ar}}</h2>
+        <ul 
+        *ngIf="selectedItem?.navbar_items?.length"
+        class="second-nav mb-5">
+            <li 
+            (click)="selectedSubItem=item"
+            *ngFor="let item of selectedItem?.navbar_items"
+            [class.active]="selectedSubItem?.id==item.id">{{item.header | lang : item.header_ar}}</li>
         </ul>
-        <div class="row align-items-center">
-            <div class="col-md-6 mb-4 mb-md-0">
+        <div 
+        *ngIf="selectedSubItem"
+        class="row align-items-center">
+            <div 
+            [ngClass]="{'col-md-6': selectedSubItem.image,'col-md-12': !selectedSubItem.image}"
+            class="mb-4 mb-md-0">
                 <div>
                     <p class="main-text">
-                        Comprehensive Data Services, where we pave the way for unlocking the true potential of your information.     
+                      {{selectedSubItem.content | lang : selectedSubItem.content_ar}}     
                     </p>
-                    <p class="main-text">
-                        Our tailored data solutions cater to a spectrum of needs, spanning data collection, processing, analysis, and interpretation. 
-                    </p>
-                    <p class="main-text"> With a focus on accuracy, security, and efficiency, our platform serves as a one-stop destination for businesses and researchers alike. Whether you require robust data infrastructure, advanced analytics, or customized reporting, our team of seasoned professionals is committed to delivering excellence.</p>
-                    <p class="main-text"> We understand that data is the lifeblood of modern enterprises, and our suite of services is designed to empower you with the insights necessary for strategic decision-making. Explore a new dimension of data management with us, where your information is not just processed—it's optimized for success.</p>
                 </div>
             </div>
-            <div class="col-md-6 mb-4 mb-md-0">
+            <div 
+            *ngIf="selectedSubItem?.image?.image"
+            class="col-md-6 mb-4 mb-md-0">
                 <div class="text-center">
-                    <img src="assets/images/Group 33065.png" alt="taps" class="img-fluid">
+                    <img [src]="selectedSubItem.image.image" alt="taps" class="img-fluid">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <p
-        *ngIf="!lowerContent"
-        >Embrace the future of language technology with our state-of-the-art NLP tools. Our tools such as ASR, TTS, sentiment analysis, entity recognition… are meticulously crafted and continuously updated to meet the evolving demands of natural language processing.</p>
     </div>
 </section>

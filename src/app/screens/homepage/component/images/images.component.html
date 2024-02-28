@@ -1,17 +1,23 @@
 <section class="container home-images py-5">
     <article 
-    *ngIf="text"
+    *ngIf="images?.header||images?.header_ar"
     class="text-center mb-5">
-        <h2 class="mb-4 main-heading">{{text.h2}}</h2>
-        <p class="blue-text">{{text.p}}</p>
+        <h2 class="mb-4 main-heading">{{images.header | lang : images.header_ar}}</h2>
+        <p class="blue-text">{{images.content | lang : images.content_ar}}</p>
     </article>
-    <div class="row">
+    <div 
+    *ngIf=" images?.sections?.length"
+    class="row">
         <div 
-        *ngFor="let item of images"
+        *ngFor="let item of images.sections"
         class="col-6 col-md-3 mb-4 mb-md-0 text-center">
-            <div>
-                <img [src]="item" alt="DataLex4ai" class="img-fluid">   
-            </div>
+                <div>
+                    <img 
+                    [class.mb-4]="item?.header"
+                    [src]="item.image.image" alt="DataLex4ai" class="img-fluid ">
+                    <h3 class="sub-heading sub-heading-small mb-0">{{(item.header | lang : item.header_ar)}}</h3>
+                </div>
+
         </div>
     </div>
 </section>

@@ -1,4 +1,6 @@
-<section class="blog-details">
+<section 
+*ngIf="pageData"
+class="blog-details">
     <div class="header">
         <img src="assets/images/header.webp" alt="blog details">
         <div class="media">
@@ -6,58 +8,14 @@
         </div>
     </div>
     <div class="container pt-5">
+        <h2 *ngIf="pageData.header" class="main-heading">{{pageData.header | lang : pageData.header_ar}}</h2>
         <p class="main-text">
-            In January 2023, Appen signed the United Nations Global Compact (UNGC), joining more than 23,000 companies
-            that have committed to supporting sustainable business practices and to taking ownership of creating a
-            brighter, more just society. In our rapidly evolving world, it’s never been more important for businesses to
-            operate within a strong, shared system of values — and that’s exactly why we took this important step.
+            {{pageData.content | lang : pageData.content_ar}}
         </p>
         <p class="main-text">
-            Businesses like ours that join the UNGC are asked to uphold its Ten Principles, which are designed to
-            promote the creation of policies that advocate for human rights, protect the wellbeing of our environment,
-            establish equitable labor standards, and fight corruption.
-            As a people-first organization focused on using AI for good, we’ve always believed in these principles. Our
-            goal is to help build a reality where responsible businesses coexist in harmony with the community and
-            environment.
-        </p>
-        <p class="main-text">
-            For the remainder of the year and beyond, we’re excited to continue to rigorously integrate more
-            forward-thinking policies across Appen’s core strategies and operations. Here are the commitments we’ve made
-            so far, and how we’re working to keep them.
-        </p>
-        <p class="main-text">
-            Environmental Impact Reduction: Net-Zero Emissions by 2030
-            We take the responsibility to combat climate change seriously. That’s why we’ve signed up with the Science
-            Based Targets initiative (SBTi), a group affiliated with the UNGC which is designed to empower companies to
-            set targets for reducing operational emissions.
-        </p>
-        <p class="main-text">
-            As a testament to Appen’s own environmental impact commitment, our target is to achieve net-zero emissions
-            across our entire business by 2030. This initiative is part of a larger collective goal among all SBTi
-            members to cap global warming at 1.5 degrees Celsius. To learn more about our board-approved plan, check out
-            our net-zero emissions roadmap.
-        </p>
-        <p class="main-text">
-            For us, actions speak louder than words. We’re dedicated to reducing our carbon footprint and ensuring a
-            well-preserved planet for the many generations to come.
-        </p>
-        <p class="main-text">
-            Upholding Human Rights and Battling Corruption
-            We also have our sights set on ensuring that human rights are recognized and respected globally. This
-            priority includes reducing the risk of modern slavery across businesses and supply chains.
-        </p>
-        <p class="main-text">To bolster these duties and guide our behavior, we’ve established a global ethical sourcing
-            and modern slavery policy, which we’ll strictly enforce within our own business and among our suppliers.
-            This policy robustly addresses a number of crucial areas, including:</p>
-        <p class="main-text">
-            No tolerance for slavery, forced labor, or human trafficking
-            Child employment regulations
-            Fair wages and regulated working hours
-            Creating a discrimination- and harassment-free environment
-            Ensuring the safest-possible working conditions
-            Upholding freedom of association
+            {{pageData.content_2 | lang : pageData.content_2_ar}}
         </p>
 
     </div>
-    <app-slider-grid [data]="resources" title="More Articles Like This" />
+    <app-slider-grid [data]="moreLikeThis"  />
 </section>

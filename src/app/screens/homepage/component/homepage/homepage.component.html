@@ -1,8 +1,10 @@
-<app-slider [data]="header" />
+<app-slider 
+*ngIf="upperSlider?.length"
+[data]="upperSlider" [btnBig]="false" />
 <app-images [images]="images" />
-<app-taps />
+<app-taps [data]="taps" />
 <app-slider [data]="driver" />
-<app-images [images]="images2"  [text]="text"/>
+<app-images [images]="valueProposition"  />
 <app-slider [data]="nlpTools" />
-<app-slider-grid [data]="resources" title="Resources" />
-<app-what-we-do [data]="whatwedo" h2="What We Do?" />
+<app-slider-grid [data]="resources"  />
+<app-what-we-do [data]="whatwedo"  />

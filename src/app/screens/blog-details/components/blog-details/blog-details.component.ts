@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription, map, skipWhile, switchMap } from 'rxjs';
 import { Resources } from 'src/app/screens/models/resources';
+import { MainContainerWithHeader } from 'src/app/shared/models/main-container-with-header';
+import { MainSection } from 'src/app/shared/models/main-section';
+import { GlopalService } from 'src/app/shared/services/glopal.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -7,55 +12,39 @@ import { Resources } from 'src/app/screens/models/resources';
   styleUrls: ['./blog-details.component.scss']
 })
 export class BlogDetailsComponent {
-  resources:Resources[] = [
-    {
-      img:'assets/images/image 2.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-    {
-      img:'assets/images/image 5.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-    {
-      img:'assets/images/image 5.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-    {
-      img:'assets/images/image 2.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-    {
-      img:'assets/images/image 5.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-    {
-      img:'assets/images/image 5.png',
-      h3:'long established',
-      p:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that....',
-      date:'May 20th 2020',
-      a:'Read more',
-      route:'/blog-details'
-    },
-
-  ]
+  pageData!:MainSection|undefined
+  subscribtion!:Subscription
+  moreLikeThis!:MainContainerWithHeader
+  constructor(private glopalService:GlopalService,
+    private activatedRoute:ActivatedRoute) {}
+ ngOnInit(): void {
+  this.subscribtion = this.activatedRoute.params.pipe(
+    map((param) => param['id']),
+    switchMap(param => this.blogDetails(param))
+  ).subscribe(
+    res=>{
+      this.pageData=res
+    }
+  )
+  
+ }
+ blogDetails(id:number) {
+  return this.glopalService.pages.pipe(
+    skipWhile(val=>val==null),
+    map(res =>   res?.find(item => item.title== "Home")),
+    map((res:any) => {
+      if(res?.sections?.length) {
+        let sections:any[] = [...res?.sections.map( function (item:any) {return{...item}})]
+        let blogs:MainContainerWithHeader = sections.find(item=>item.title=='Home Section 4 - Resources')
+        let blogDetails = blogs?.sections?.find((item:any) => item?.id==id)
+        blogs.sections = blogs?.sections.filter(item=>item.id!=id)
+        this.moreLikeThis=blogs
+        return blogDetails
+      } return undefined
+    })
+  )
+ }
+ ngOnDestroy(): void {
+   if(this.subscribtion)this.subscribtion.unsubscribe()
+ }
 }

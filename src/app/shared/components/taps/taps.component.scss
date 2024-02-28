@@ -20,11 +20,13 @@
                 white-space: nowrap;
                 cursor: pointer;
                 transition: .2s;
+                padding-bottom: 5px;
+                border-bottom: 5px solid transparent;
             }
 
             li.active , li:hover {
                 border-bottom: 5px solid var(--white);
-                padding-bottom: 5px;
+                
             }
         }
     }
@@ -42,9 +44,10 @@
             line-height: 1.6rem;
             padding-bottom: .5rem !important;
             transition: .2s;
+            border-bottom: 4px solid transparent;
         }
         li.active  {
-            font-weight: 700;
+            // font-weight: 700;
             border-bottom: 4px solid var(--main);
             color:var(--main);
         }

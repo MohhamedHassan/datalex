@@ -10,16 +10,18 @@ class="section-bg pt-5 pb-4" >
                 class="row align-items-center ">
                     <div class="col-md-6 mb-4 mb-md-0">
                         <div>
-                            <h2 class="main-heading">{{item?.h1}}</h2>
-                            <p class="main-text">{{item?.paragraph}}</p>
+                            <h2 class="main-heading">{{item.header | lang : item.header_ar}}</h2>
+                            <p class="main-text">  {{item.content | lang : item.content_ar}}</p>
                             <a 
-                            [class.main-btn-small]="!item?.btnBig"
-                            [routerLink]="item?.route" class="main-btn">{{item?.linkText}}</a>
+                            *ngIf="item?.button"
+                            [class.main-btn-small]="!btnBig"
+                            [routerLink]="item?.button?.link" class="main-btn">
+                            {{item.button.text | lang : item.button.text_ar}}</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="text-center">
-                            <img [src]="item?.imgSrc"  [alt]="item?.imageAlt" class="img-fluid">
+                            <img [src]="item?.image?.image"  alt="datalex4ai" class="img-fluid">
                         </div>
                     </div>
                 

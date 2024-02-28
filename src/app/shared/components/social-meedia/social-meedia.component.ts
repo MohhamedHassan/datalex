@@ -1,28 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GlopalService } from '../../services/glopal.service';
 
 @Component({
   selector: 'app-social-meedia',
   templateUrl: './social-meedia.component.html',
   styleUrls: ['./social-meedia.component.scss']
 })
-export class SocialMeediaComponent {
-  links=[
-    {
-      icon:'fa-brands fa-facebook-f',
-      href:'',
-    },
-    {
-      icon:'fa-brands fa-instagram',
-      href:'',
-    },
-    {
-      icon:'fa-brands fa-twitter',
-      href:'',
-    },
-    {
-      icon:'fa-brands fa-youtube',
-      href:'',
-    }
-  ]
+export class SocialMeediaComponent  {
+  constructor(public glopalService:GlopalService) {}
+
   @Input() color:string='black'
+  get lang() {
+    return localStorage.getItem('lang')||'en'
+  }
 }

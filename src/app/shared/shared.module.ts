@@ -9,6 +9,9 @@ import { SectionHeaderComponent } from './components/section-header/section-head
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LangPipe } from './pipes/lang.pipe';
+import { SharedTemplateComponent } from './components/shared-template/shared-template.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -18,7 +21,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TapsComponent,
        SliderGridComponent,
        SocialMeediaComponent,
-       SectionHeaderComponent
+       SectionHeaderComponent,
+       LangPipe,
+       SharedTemplateComponent,
+       NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +37,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     SliderGridComponent,
     SocialMeediaComponent,
     SectionHeaderComponent,
-    TranslateModule
+    TranslateModule,
+    SharedTemplateComponent,
+    LangPipe,
+    NotFoundComponent
   ]
 })
 export class SharedModule { }

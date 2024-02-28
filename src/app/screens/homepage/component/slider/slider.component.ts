@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Slider } from 'src/app/screens/models/slider';
+import { MainSection } from 'src/app/shared/models/main-section';
 
 @Component({
   selector: 'app-slider',
@@ -8,7 +9,8 @@ import { Slider } from 'src/app/screens/models/slider';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
-  @Input() data:Slider[]=[]
+  @Input() data!:MainSection[]
+  @Input() btnBig:boolean=false
   customOptions: OwlOptions = {
     loop: true,
     autoplay:true,
@@ -26,7 +28,5 @@ export class SliderComponent {
     nav: false,
     rtl:localStorage.getItem('lang')=='ar' ? true : false
   }
-  get lang() {
-    return localStorage.getItem('lang')||'en'
-  } 
+
 }

@@ -1,36 +1,35 @@
 <section class="aboutus py-5 section-bg">
     <div class="container">
-        <div class="row">
+        <div *ngIf="pageData" class="row">
             <div class="col-md-6 mb-4 mb-md-0">
                 <div>
-                    <h2 class="main-heading">About DataLex4ai</h2>
+                    <h2 class="main-heading">{{pageData.header | lang : pageData.header_ar}}</h2>
                     <p class="main-text">
-                        Welcome to DataLex4ai where we seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services, offering a comprehensive suite of language-centric solutions. 
+                        {{pageData.content | lang : pageData.content_ar}}
                     </p>
                     <p class="main-text">
-                        We specialize in providing meticulously crafted linguistic annotation services, ensuring accuracy and depth in the analysis of textual and spoken data. 
+                        {{pageData.content_2 | lang : pageData.content_2_ar}}
                     </p>
-                    <p class="main-text">
-                        Our diverse range of annotated datasets serves as a valuable resource for machine learning and artificial intelligence initiatives, fostering innovation across various domains.  
-                    </p>
-                    <p class="main-text">
-                        Additionally, our cutting-edge natural language processing (NLP) tools empower researchers and developers with advanced capabilities, driving the advancement of artificial intelligence, machine learning, and language model development. Explore the potential of language with us, where manual expertise and automated efficiency converge to shape the future of linguistic analysis and technology.
-                    </p>
-                    <p class="main-text">
-                        Additionally, our cutting-edge natural language processing (NLP) tools empower researchers and developers with advanced capabilities, driving the advancement of artificial intelligence, machine learning, and language model development. Explore the potential of language with us, where manual expertise and automated efficiency converge to shape the future of linguistic analysis and technology. 
-                    </p>
-
-                    
-
-
-
                 </div>
-            </div> 
+                <ng-container *ngIf="sections?.length">
+                    <section *ngFor="let item of sections" class="why-us">
+                        <h2 class="main-heading small" *ngIf="item.header">{{item.header | lang : item.header_ar}}</h2>
+                        <p class="main-text">
+                            {{item.content | lang : item.content_ar}}
+                        </p>
+                        <p class="main-text">
+                            {{item.content_2 | lang : item.content_2_ar}}
+                        </p>
+                    </section>
+
+                </ng-container>
+                <app-taps *ngIf="taps?.length" [data]="taps" />
+            </div>
             <div class="col-md-6 mb-4 mb-md-0">
                 <div class="text-center">
-                        <img src="assets/images/Group 33067.png" alt="about us" class="img-fluid">                    
+                    <img *ngIf="pageData.image.image" [src]="pageData.image.image" alt="about us" class="img-fluid">
                 </div>
-            </div>  
+            </div>
 
         </div>
     </div>

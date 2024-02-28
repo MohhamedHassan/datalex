@@ -1,7 +1,14 @@
 <div style="min-height: 100vh" class="d-flex flex-column justify-content-between">
     <div>
         <app-navbar />
-        <router-outlet />
+        <div [style.paddingTop]="glopalService.bodyPaddingTop">
+            <router-outlet />
+            <div 
+            *ngIf="glopalService.loading"
+            class="whileLoading">
+                <span class="loader"></span>
+            </div>
+        </div>
     </div>
     <app-footer />
 </div>

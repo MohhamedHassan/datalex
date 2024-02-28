@@ -1,15 +1,24 @@
 <footer>
-    <div class="upper py-5">
+    <div 
+    *ngIf="glopalService?.footer?.sections?.length"
+    class="upper py-5">
         <div class="container">
             <div class="row">
                 <div 
-                *ngFor="let item of upper"
+                *ngFor="let item of glopalService.footer.sections"
                 class="col-md-4 mb-4 mb-md-0">
                     <div class="text-center">
-                            <img [src]="item?.img" alt="footer" class="mb-3">
-                            <h2>{{item?.h2}}</h2>
-                            <p>{{item?.p}}</p>
-                            <p class="p2">{{item?.p2}}</p>
+                            <img 
+                            *ngIf="item?.image?.image"
+                            [src]="item?.image?.image" alt="footer" class="mb-3">
+                            <h2 *ngIf="item?.header || item?.header_ar">
+                                 {{item.header | lang :  item.header_ar  }}</h2>
+                            <p 
+                            [ngClass]="{'mb-2': item?.content_2,'mb-0':!item?.content_2}"
+                            *ngIf="item?.content ||item?.content_ar">
+                            {{item.content | lang : item.content_ar}}</p>
+                            <p *ngIf="item?.content_2 || item?.content_2_ar" class="p2 mb-0">
+                                {{item.content_2 | lang : item.content_2_ar  }}</p>
                     </div>
                 </div>
             </div>
@@ -22,21 +31,29 @@
                 <div 
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
-                        <img src="assets/images/Group 33062.png" alt="DataLex4ai" class="d-block mb-3" >   
+                        <img [src]="glopalService.logo" alt="DataLex4ai" class="d-block mb-3" >   
                         <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.</p> 
                        <app-social-meedia color="white" />
                     </div>
                 </div>
                 <!--  -->
                 <div 
+                *ngIf="glopalService.footer?.navbars?.length"
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
-                        <h2>Quick link</h2>
-                        <ul class="links">
-                            <li><a href="">About</a></li>
-                            <li><a href="">Features</a></li>
-                            <li><a href="">Screenshot</a></li>
-                            <li><a href="">Blog</a></li>
+                        <h2>{{
+                            glopalService.footer.navbars[0].header | lang  : 
+                            glopalService.footer.navbars[0].header_ar 
+                            }}
+                            </h2>
+                        <ul
+                        *ngIf="glopalService.footer.navbars[0].navbar_items_container?.length"
+                        class="links">
+                            <li
+                            *ngFor="let link of glopalService.footer.navbars[0].navbar_items_container[0].navbar_items"
+                            ><a href="">
+                                {{link.header | lang : link.header_ar  }}
+                            </a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,7 +62,7 @@
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
                         <h2>news letter</h2>  
-                        <p class="p2 mb-4">Subscribe our newsletter to get our latest
+                        <p class="p2">Subscribe our newsletter to get our latest
                             update & news</p> 
                         <form>
                             <input type="text" placeholder="Your email address">
@@ -56,11 +73,15 @@
                 <!--  -->
             </div>
             <!--  -->
+            <ng-container 
+            *ngIf="glopalService.footer?.copyright"
+            >
             <hr class="bg-white">
             <p class="text-center m-0">
                 <i class="fa-regular fa-copyright"></i>
-                Copyright 2021 .Text text. All Right Reserved.
+                {{glopalService.footer.copyright | lang :  glopalService.footer.copyright_ar}}
             </p>
+        </ng-container>
         </div>
     </div>
     <!-- end lower -->
