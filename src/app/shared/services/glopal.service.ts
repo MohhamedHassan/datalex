@@ -14,7 +14,7 @@ interface  main_container{
   providedIn: 'root'
 })
 export class GlopalService{
-  apiUrl='http://34.31.141.252/'
+  apiUrl='https://datalex4.ai/'
   navbar!:Navbar[]
   footer!:Footer
   logo!:string

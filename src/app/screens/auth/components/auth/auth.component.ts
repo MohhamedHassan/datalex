@@ -11,7 +11,6 @@ export class AuthComponent {
   changeLang() {
     let currentLang=localStorage.getItem('lang')||'en'
     let lang = currentLang=='en' ? 'ar' : 'en'
-    console.log(lang)
     if(lang=='ar') {
       document.body.classList.add('rt')
     } else {

@@ -13,11 +13,8 @@ export class TapsComponent implements OnChanges {
   selectedSubItem:MainSection|undefined
   ngOnChanges(): void {
     if(this.data?.length) {
-      console.log('')
       this.selectedItem=this.data[0]
-      console.log(this.selectedItem)
       if(this.data[0].navbar_items?.length) this.selectedSubItem=this.data[0].navbar_items[0]
-      console.log(this.selectedSubItem)
     }
   }
 }

@@ -54,7 +54,6 @@ export class HomepageComponent {
           
         }
         if(res?.navbars?.length) this.taps = res.navbars[0]?.navbar_items_container
-        console.log(this.taps)
       }
     )
  }
