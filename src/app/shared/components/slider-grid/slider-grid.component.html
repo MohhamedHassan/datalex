@@ -5,13 +5,13 @@
     <owl-carousel-o 
     *ngIf="data?.sections?.length"
     [options]="customOptions">
-        <ng-template *ngFor="let item of data.sections" carouselSlide>
+        <ng-template *ngFor="let item of data.sections;let i = index" carouselSlide>
             <div 
-            class="shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
+            class="slideritem shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
                 <div>
                     <div>
                         <img 
-                        (load)="setEqualHeight()"
+                        (load)="imageLoadingDone(i)"
                         [src]="item?.image?.image" alt="Resources" class="img-fluid">
                     </div>
                     <div class="p-3">

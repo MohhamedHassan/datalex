@@ -36,7 +36,20 @@ export class SliderGridComponent  {
     rtl:localStorage.getItem('lang')=='ar' ? true : false
   }
   
- 
+  imageLoadingDone(index:number) {
+    this.data.sections[index].load=true
+    let allImagesLoad = true
+    if(this.data.sections?.length) {
+      this.data.sections.forEach(item => {
+         if(!item.load) allImagesLoad=false
+      })
+      if(allImagesLoad) {
+        this.setEqualHeight()
+        
+      }
+    }
+
+  }
   setEqualHeight(): void {
     let maxHeight = 0;
     this.owlItems.forEach(item => {

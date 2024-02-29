@@ -8,6 +8,7 @@ export interface MainSection {
     header:string;
     header_ar:string;
     image:{image:string};
+    load:boolean;
     button: {
         text: string;
         text_ar: string;
