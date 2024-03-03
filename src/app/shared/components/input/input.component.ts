@@ -9,5 +9,5 @@ export class InputComponent {
   @Input() label:string=''
   @Input() placeholder:string=''
   @Input() type:string='text'
-
+  @Input() fieldType='input'
 }

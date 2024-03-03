@@ -7,10 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('src/app/screens/layout/layout.module').then(m => m.LayoutModule),
   },
-  {
-    path: 'auth',
-    loadChildren: () => import('src/app/screens/auth/auth.module').then(m => m.AuthModule)
-  },
+  // {
+  //   path: 'auth',
+  //   loadChildren: () => import('src/app/screens/auth/auth.module').then(m => m.AuthModule)
+  // },
   {
     path:'**',
     component:NotFoundComponent

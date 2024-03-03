@@ -10,5 +10,13 @@
     "password":"Password",
     "confirmPassword":"Confirm Password",
     "signup":"Sign up",
-    "haveanaccount":"have an account?"
+    "haveanaccount":"have an account?",
+    "submit":"Submit",
+    "first":"First Name",
+    "last":"Last Name",
+    "business":"Business Email",
+    "company":"Company Name",
+    "job":"Job Title",
+    "phone":"Phone Number",
+    "Tellusabitaboutyourproject":"Tell us a bit about your project"
 }

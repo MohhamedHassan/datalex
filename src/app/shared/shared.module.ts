@@ -12,6 +12,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LangPipe } from './pipes/lang.pipe';
 import { SharedTemplateComponent } from './components/shared-template/shared-template.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { InputComponent } from './components/input/input.component';
 
 
 
@@ -24,14 +25,24 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
        SectionHeaderComponent,
        LangPipe,
        SharedTemplateComponent,
-       NotFoundComponent
+       NotFoundComponent,
+       InputComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    CarouselModule
+    CarouselModule,
+    TranslateModule.forChild({
+      defaultLanguage:'en',
+      loader: {
+        provide:TranslateLoader,
+        useFactory:createTranslateLoader,
+        deps:[HttpClient]
+      }
+    })
   ],
   exports: [
+    InputComponent,
     CarouselModule,
     TapsComponent,
     SliderGridComponent,
@@ -44,4 +55,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   ]
 })
 export class SharedModule { }
-
+export function createTranslateLoader(http:HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json')
+}

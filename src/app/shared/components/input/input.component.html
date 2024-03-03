@@ -1,0 +1,12 @@
+<div 
+*ngIf="fieldType=='input'"
+class="form-group mb-4">
+    <label class="mb-1">{{label|translate}}</label>
+    <input [type]="type" [placeholder]="placeholder|translate" class="form-control label">
+</div>
+<div 
+*ngIf="fieldType=='textarea'"
+class="form-group mb-4">
+    <label class="mb-1">{{label|translate}}</label>
+    <textarea [placeholder]="placeholder|translate" class="form-control label"></textarea>
+</div>

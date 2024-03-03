@@ -1,1 +1,22 @@
-<p>contact-us works!</p>
+<app-section-header 
+[title]="'Contact Us' | lang : 'تواصل معنا'" />
+<section class="py-5 container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form>
+                <app-input placeholder="first" label="first" />
+                <app-input placeholder="last" label="last" />
+                <app-input placeholder="business" label="business" />
+                <app-input placeholder="company" label="company" />
+                <app-input placeholder="job" label="job" />
+                <app-input placeholder="phone" label="phone" />
+                <app-input 
+                fieldType="textarea"
+                placeholder="Tellusabitaboutyourproject" label="Tellusabitaboutyourproject" />
+                <button class="auth mb-3">
+                   {{'submit'|translate}}
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
