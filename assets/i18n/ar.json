@@ -10,5 +10,13 @@
     "password":"كلمة السر",
     "confirmPassword":"تأكيد كلمة السر",
     "signup":"انشاء حساب",
-    "haveanaccount":"لديك حساب؟"
+    "haveanaccount":"لديك حساب؟",
+    "submit":"حفظ",
+    "first":"الاسم الاول",
+    "last":"الاسم الاخير",
+    "business":"البريد الالكتروني",
+    "company":"اسم الشركة ",
+    "job":"الوظيفة",
+    "phone":"رقم الهاتف",
+    "Tellusabitaboutyourproject":"أخبرنا عن نفسك"
 }
