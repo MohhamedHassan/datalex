@@ -14,7 +14,9 @@ export class AppComponent implements OnInit {
     this.glopalService.getPages()
 
     this.lang()
-    this.http.get('https://openlibrary.org/subjects/Finance.json?details=false').subscribe(console.log)
+    this.http.get('https://openlibrary.org/subjects/Finance.json?details=false',{
+      headers:{'Content-Type':'application/json','Access-Control-Allow-Origin': '*' }
+    }).subscribe(console.log)
     }
 
  lang() {
