@@ -1,22 +1,19 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { GlopalService } from './shared/services/glopal.service';
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private glopalService:GlopalService,private translateService:TranslateService,private http:HttpClient){}
+  constructor(private glopalService:GlopalService,private translateService:TranslateService){}
   ngOnInit(): void {
     this.glopalService.getNavbarAndFooterData()
     this.glopalService.getPages()
 
     this.lang()
-    this.http.get('https://openlibrary.org/subjects/Finance.json?details=false',{
-      headers:{'Content-Type':'application/json','Access-Control-Allow-Origin': '*' }
-    }).subscribe(console.log)
+   
     }
 
  lang() {

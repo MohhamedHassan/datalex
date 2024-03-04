@@ -13,6 +13,7 @@ import { LangPipe } from './pipes/lang.pipe';
 import { SharedTemplateComponent } from './components/shared-template/shared-template.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { InputComponent } from './components/input/input.component';
+import { ErrComponent } from './components/err/err.component';
 
 
 
@@ -26,7 +27,8 @@ import { InputComponent } from './components/input/input.component';
        LangPipe,
        SharedTemplateComponent,
        NotFoundComponent,
-       InputComponent
+       InputComponent,
+       ErrComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { InputComponent } from './components/input/input.component';
     TranslateModule,
     SharedTemplateComponent,
     LangPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    ErrComponent
   ]
 })
 export class SharedModule { }

@@ -29,6 +29,8 @@ export class GlopalService{
         this.footer=res.footer
         this.logo=res.logo?.image
         this.setPaddingTop()
+      },err =>  {
+        this.router.navigate(['/notfound'])
       }
     )
   }
@@ -37,6 +39,8 @@ export class GlopalService{
       res => {
         this.pages.next(res)
         this.loading=false
+      },err =>  {
+        this.router.navigate(['/notfound'])
       }
     )
   }
