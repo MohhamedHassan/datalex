@@ -7,18 +7,18 @@
         *ngIf="data?.sections?.length"
         class="row">
             <div
-            *ngFor="let item of data.sections let i = index"
+            *ngFor="let item of data?.sections let i = index"
             class="col-md-6 text-center mb-4 mb-md-0">
                 <div class="p-4 d-flex flex-column justify-content-between h-100">           
                     <div>
-                        <h3 class="sub-heading">{{item.header | lang : item.header_ar}}</h3>
+                        <h3 class="sub-heading">{{item?.header | lang : item?.header_ar}}</h3>
                         <p class="blue-text">
-                            {{(item.content | lang : item.content_ar)|slice:0:200}} ...
+                            {{(item?.content | lang : item?.content_ar)|slice:0:200}} ...
                         </p>
                     </div>
-                    <div>
+                    <div *ngIf="item?.button">
                         <a [routerLink]="item?.button?.link" class="main-btn main-btn-small">
-                            {{item.button.text | lang : item.button.text_ar}}</a> 
+                            {{item?.button?.text | lang : item?.button?.text_ar}}</a> 
                     </div>
                 </div>
             </div>

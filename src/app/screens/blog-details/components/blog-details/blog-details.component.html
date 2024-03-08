@@ -8,11 +8,11 @@ class="blog-details">
         </div>
     </div>
     <div class="container pt-5">
-        <h2 *ngIf="pageData.header" class="main-heading">{{pageData.header | lang : pageData.header_ar}}</h2>
-        <p class="main-text">
+        <h2 *ngIf="pageData?.header" class="main-heading">{{pageData.header | lang : pageData.header_ar}}</h2>
+        <p  *ngIf="pageData?.content" class="main-text">
             {{pageData.content | lang : pageData.content_ar}}
         </p>
-        <p class="main-text">
+        <p  *ngIf="pageData?.content_2"  class="main-text">
             {{pageData.content_2 | lang : pageData.content_2_ar}}
         </p>
 

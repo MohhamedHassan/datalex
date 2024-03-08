@@ -26,9 +26,10 @@
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
                         <span class="date">May 20th 2020</span>
-                        <a class="maincolor date bold" 
-                        [routerLink]="'/blog-details/'+item.id">
-                        {{item.button.text | lang : item.button.text_ar}}
+                        <a 
+                        class="maincolor date bold" 
+                        [routerLink]="'/blog-details/'+item?.id">
+                        {{item?.button?.text | lang : item?.button?.text_ar}}
                         </a>
                     </div>
                 </div>

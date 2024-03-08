@@ -27,6 +27,7 @@ interface footer_navbar        {
 interface ar_en    {
     header: string,
     header_ar: string,
+    link:string
 }
 interface social_Login {
     icon: string,

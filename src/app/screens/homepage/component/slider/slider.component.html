@@ -1,5 +1,5 @@
 <section 
-
+*ngIf="data?.length"
 class="section-bg pt-5 pb-4" >
     <owl-carousel-o [options]="customOptions">
         <ng-template
@@ -10,13 +10,13 @@ class="section-bg pt-5 pb-4" >
                 class="row align-items-center ">
                     <div class="col-md-6 mb-4 mb-md-0">
                         <div>
-                            <h2 class="main-heading">{{item.header | lang : item.header_ar}}</h2>
-                            <p class="main-text">  {{item.content | lang : item.content_ar}}</p>
+                            <h2 class="main-heading">{{item?.header | lang : item?.header_ar}}</h2>
+                            <p class="main-text">  {{item?.content | lang : item?.content_ar}}</p>
                             <a 
                             *ngIf="item?.button"
                             [class.main-btn-small]="!btnBig"
                             [routerLink]="item?.button?.link" class="main-btn">
-                            {{item.button.text | lang : item.button.text_ar}}</a>
+                            {{item?.button?.text | lang : item?.button?.text_ar}}</a>
                         </div>
                     </div>
                     <div class="col-md-6">

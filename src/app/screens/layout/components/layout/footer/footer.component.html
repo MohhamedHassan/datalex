@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div 
-                *ngFor="let item of glopalService.footer.sections"
+                *ngFor="let item of glopalService?.footer?.sections"
                 class="col-md-4 mb-4 mb-md-0">
                     <div class="text-center">
                             <img 
@@ -51,7 +51,7 @@
                         class="links">
                             <li
                             *ngFor="let link of glopalService.footer.navbars[0].navbar_items_container[0].navbar_items"
-                            ><a href="">
+                            ><a [routerLink]="link?.link">
                                 {{link.header | lang : link.header_ar  }}
                             </a></li>
                         </ul>

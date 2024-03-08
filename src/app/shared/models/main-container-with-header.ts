@@ -2,8 +2,8 @@ import { MainSection } from "./main-section";
 
 export interface MainContainerWithHeader {
     title:string;
-    header:string;
-    header_ar:string;
+    header?:string;
+    header_ar?:string;
     content: string;
     content_ar:string;
     content_2:string;

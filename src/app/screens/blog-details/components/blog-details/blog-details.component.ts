@@ -23,7 +23,7 @@ export class BlogDetailsComponent {
     switchMap(param => this.blogDetails(param))
   ).subscribe(
     res=>{
-      this.pageData=res
+    //  this.pageData=res
     }
   )
   
