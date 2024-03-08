@@ -2,7 +2,9 @@
 *ngIf="pageData?.header"
 [title]="pageData.header | lang : pageData.header_ar" />
 <div class="py-5 container">
-        <section class="why-us ">
+        <section 
+        *ngIf="pageData"
+        class="why-us ">
                 <h2 class="main-heading small" *ngIf="pageData?.header">{{pageData.header | lang : pageData.header_ar}}</h2>
                 <p 
                 *ngIf="pageData?.content || pageData?.content_ar"

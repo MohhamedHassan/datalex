@@ -31,7 +31,7 @@ export class BlogDetailsComponent {
  blogDetails(id:number) {
   return this.glopalService.pages.pipe(
     skipWhile(val=>val==null),
-    map(res =>   res?.find(item => item.title== "Home")),
+    map(res =>   res?.find(item => item?.title== "Home")),
     map((res:any) => {
       if(res?.sections?.length) {
         let sections:any[] = [...res?.sections.map( function (item:any) {return{...item}})]

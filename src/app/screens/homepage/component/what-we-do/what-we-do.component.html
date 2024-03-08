@@ -1,4 +1,6 @@
-<section class="section-bg">
+<section 
+*ngIf="data"
+class="section-bg">
     <div class="container py-5 ">
         <h2 
         *ngIf="data?.header"
@@ -7,7 +9,7 @@
         *ngIf="data?.sections?.length"
         class="row">
             <div
-            *ngFor="let item of data?.sections let i = index"
+            *ngFor="let item of data.sections let i = index"
             class="col-md-6 text-center mb-4 mb-md-0">
                 <div class="p-4 d-flex flex-column justify-content-between h-100">           
                     <div>

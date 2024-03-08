@@ -25,9 +25,9 @@ export class GlopalService{
   getNavbarAndFooterData() {
     return this.http.get<main_container>(`${this.apiUrl}page/main-container`).subscribe(
       res => {
-        this.navbar=res?.navbar.navbar_items_container;
-        this.footer=res.footer
-        this.logo=res.logo?.image
+        this.navbar=res?.navbar?.navbar_items_container;
+        this.footer=res?.footer
+        this.logo=res?.logo?.image
         this.setPaddingTop()
       },err =>  {
         this.router.navigate(['/notfound'])

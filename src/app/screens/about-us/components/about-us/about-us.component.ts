@@ -23,7 +23,7 @@ export class AboutUsComponent implements OnInit,OnDestroy {
     )
     this.subscribtion =  aboutData$.subscribe(
       (res:{main_section:MainContainerWithHeader;sections:MainSection[];navbars:{navbar_items_container:Taps[]}[]})=>{
-        this.pageData=res.main_section
+        this.pageData=res?.main_section
         if(res?.navbars?.length) this.taps=res?.navbars[0]?.navbar_items_container
         if(res?.sections?.length) this.sections=res?.sections
       }

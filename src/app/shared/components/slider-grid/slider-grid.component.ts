@@ -39,8 +39,8 @@ export class SliderGridComponent  {
   imageLoadingDone(index:number) {
     this.data.sections[index].load=true
     let allImagesLoad = true
-    if(this.data.sections?.length) {
-      this.data.sections.forEach(item => {
+    if(this.data?.sections?.length) {
+      this.data?.sections.forEach(item => {
          if(!item.load) allImagesLoad=false
       })
       if(allImagesLoad) {

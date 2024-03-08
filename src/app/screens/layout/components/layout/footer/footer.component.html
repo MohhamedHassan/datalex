@@ -32,7 +32,7 @@
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
                         <img [src]="glopalService.logo" alt="DataLex4ai" class="d-block mb-3" >   
-                        <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.</p> 
+                        <p class="p2">Welcome to DataLex4ai where we seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services.</p> 
                        <app-social-meedia color="white" />
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                             }}
                             </h2>
                         <ul
-                        *ngIf="glopalService.footer.navbars[0].navbar_items_container?.length"
+                        *ngIf="glopalService.footer.navbars[0]?.navbar_items_container?.length"
                         class="links">
                             <li
                             *ngFor="let link of glopalService.footer.navbars[0].navbar_items_container[0].navbar_items"

@@ -26,7 +26,7 @@ export class HomepageComponent {
  ngOnInit(): void {
    let aboutData$ =  this.glopalService.pages.pipe(
       skipWhile(val=>val==null),
-      map(res =>   res?.find(item => item.title== "Home")),
+      map(res =>   res?.find(item => item?.title== "Home")),
     )
     this.subscribtion =  aboutData$.subscribe(
       (res:{main_section:any,sections:any[],navbars:{navbar_items_container:any}[]})=>{
@@ -36,24 +36,24 @@ export class HomepageComponent {
           // 
           this.driver = sections.find(item=>item.title=='Home Section 1')?.sections || []
           // 
-          let ValueProposition = sections.find(item=>item.title=='Home Section 2 - Value Proposition')
+          let ValueProposition = sections.find(item=>item?.title=='Home Section 2 - Value Proposition')
           if(ValueProposition) this.valueProposition =  ValueProposition
           // 
-          let images = sections.find(item=>item.title=='Home section 6')
+          let images = sections.find(item=>item?.title=='Home section 6')
           if(images) this.images =  images
           // 
-          this.nlpTools = sections.find(item=>item.title == "Home Section 3")?.sections || []
+          this.nlpTools = sections.find(item=>item?.title == "Home Section 3")?.sections || []
           // 
-          let resources = sections.find(item=>item.title=='Home Section 4 - Resources')
+          let resources = sections.find(item=>item?.title=='Home Section 4 - Resources')
           if(resources) this.resources =  resources
           //
-          let whatwedo = sections.find(item=>item.title=='Home Section 5 - What We Do?')
+          let whatwedo = sections.find(item=>item?.title=='Home Section 5 - What We Do?')
           if(whatwedo) this.whatwedo =  whatwedo
           // 
          
           
         }
-        if(res?.navbars?.length) this.taps = res.navbars[0]?.navbar_items_container
+        if(res?.navbars?.length) this.taps = res?.navbars[0]?.navbar_items_container
       }
     )
  }

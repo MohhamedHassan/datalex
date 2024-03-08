@@ -14,7 +14,7 @@ export class TapsComponent implements OnChanges {
   ngOnChanges(): void {
     if(this.data?.length) {
       this.selectedItem=this.data[0]
-      if(this.data[0].navbar_items?.length) this.selectedSubItem=this.data[0].navbar_items[0]
+      if(this.data[0]?.navbar_items?.length) this.selectedSubItem=this.data[0]?.navbar_items[0]
     }
   }
 }
