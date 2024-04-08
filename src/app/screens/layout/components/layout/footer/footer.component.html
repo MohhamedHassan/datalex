@@ -1,5 +1,5 @@
 <footer>
-    <div 
+    <!-- <div 
     *ngIf="glopalService?.footer?.sections?.length"
     class="upper py-5">
         <div class="container">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- end upper -->
     <div class="lower pt-5 pb-2">
         <div class="container">
@@ -64,10 +64,30 @@
                         <h2>news letter</h2>  
                         <p class="p2">Subscribe our newsletter to get our latest
                             update & news</p> 
-                        <!-- <form>
+                        <form class="my-2">
                             <input type="text" placeholder="Your email address">
                             <img src="assets/images/send-plane-2-fill.png" alt="send">
-                        </form> -->
+                        </form>
+                        <div 
+                        *ngFor="let item of glopalService?.footer?.sections"
+                       >
+                          
+                                    <!-- <img 
+                                    *ngIf="item?.image?.image"
+                                    [src]="item?.image?.image" alt="footer" class="mb-3"> -->
+                                    <!-- <h2 *ngIf="item?.header || item?.header_ar">
+                                         {{item.header | lang :  item.header_ar  }}</h2> -->
+                                    <!-- <p 
+                                    [ngClass]="{'mb-2': item?.content_2,'mb-0':!item?.content_2}"
+                                    *ngIf="item?.content ||item?.content_ar">
+                                    {{item.content | lang : item.content_ar}}</p> -->
+                                    <p *ngIf="item?.content_2 || item?.content_2_ar" class="p2 mb-0 d-flex">
+                                        {{item.header | lang :  item.header_ar  }}
+                                        <span class="mx-2"></span>
+                                        {{item.content_2 | lang : item.content_2_ar  }}
+                                    </p>
+                         
+                        </div>
                     </div>
                 </div>
                 <!--  -->

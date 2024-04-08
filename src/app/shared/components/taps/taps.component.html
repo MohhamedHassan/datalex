@@ -1,7 +1,7 @@
 <section 
 *ngIf="data?.length"
 class="taps pb-5">
-    <div 
+    <!-- <div 
     *ngIf="data?.length"
     class="tapsContainer mb-4">
         <div class="container">
@@ -14,38 +14,53 @@ class="taps pb-5">
                 >{{item.header | lang : item.header_ar}}</li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <div 
-    *ngIf="selectedItem"
+    *ngFor="let item of data"
     class="content container">
-        <h2 class="main-heading mb-4">{{selectedItem.header | lang : selectedItem.header_ar}}</h2>
-        <ul 
-        *ngIf="selectedItem?.navbar_items?.length"
+        <h2 class="main-heading mb-4">{{item.header | lang : item.header_ar}}</h2>
+        <!-- <ul 
+        *ngIf="item?.navbar_items?.length"
         class="second-nav mb-5">
             <li 
-            (click)="selectedSubItem=item"
-            *ngFor="let item of selectedItem?.navbar_items"
-            [class.active]="selectedSubItem?.id==item.id">{{item.header | lang : item.header_ar}}</li>
-        </ul>
-        <div 
-        *ngIf="selectedSubItem"
-        class="row align-items-center">
-            <div 
-            [ngClass]="{'col-md-6': selectedSubItem.image,'col-md-12': !selectedSubItem.image}"
-            class="mb-4 mb-md-0">
-                <div>
-                    <p class="main-text">
-                      {{selectedSubItem.content | lang : selectedSubItem.content_ar}}     
-                    </p>
+            *ngFor="let child of item?.navbar_items"
+           >{{item.header | lang : item.header_ar}}
+         [class.active]="selectedSubItem?.id==item.id"
+        </li>
+        </ul> -->
+
+        <ng-container  *ngIf="item?.navbar_items">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template
+                *ngFor="let link of item?.navbar_items"
+                carouselSlide>
+                <div 
+            
+                class="row align-items-start mb-4">
+             
+                    <div 
+                   
+                    [ngClass]="{'col-md-6': link.image,'col-md-12': !link.image}"
+                    class="mb-4 mb-md-0">
+                        <div>
+                            <h3>{{link.header | lang : link.header_ar}}</h3>
+                            <p class="main-text">
+                              {{link.content | lang : link.content_ar}}     
+                            </p>
+                        </div>
+                    </div>
+                    <div 
+                    *ngIf="link?.image?.image"
+                    class="col-md-6 mb-4 mb-md-0">
+                        <div class="d-flex justify-content-end">
+                            <img style="width: auto !important;" [src]="link.image.image" alt="taps" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div 
-            *ngIf="selectedSubItem?.image?.image"
-            class="col-md-6 mb-4 mb-md-0">
-                <div class="text-center">
-                    <img [src]="selectedSubItem.image.image" alt="taps" class="img-fluid">
-                </div>
-            </div>
-        </div>
+            </ng-template>   
+        </owl-carousel-o>
+       
+        </ng-container>
+
     </div>
 </section>

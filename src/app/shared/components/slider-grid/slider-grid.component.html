@@ -1,7 +1,10 @@
 <section class="container py-5">
     <h2 
-    *ngIf="data?.header"
-    class="main-heading mb-4">{{data.header | lang : data.header_ar}}</h2>
+    *ngIf="headerTest"
+    class="main-heading mb-4 text-center">Services</h2>
+    <h2 
+    *ngIf="data?.header && !headerTest"
+    class="main-heading mb-4 text-center">{{data.header | lang : data.header_ar}}</h2>
     <owl-carousel-o 
     *ngIf="data?.sections?.length"
     [options]="customOptions">
@@ -25,7 +28,9 @@
                 </div>
                 <div class="p-3">
                     <div class="d-flex align-items-center justify-content-between">
-                        <span class="date">May 20th 2020</span>
+                        <span class="date">
+                            <!-- May 20th 2020 -->
+                        </span>
                         <a 
                         class="maincolor date bold" 
                         [routerLink]="'/blog-details/'+item?.id">

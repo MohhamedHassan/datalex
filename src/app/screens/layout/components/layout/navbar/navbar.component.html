@@ -1,6 +1,6 @@
 <nav 
 (click)="closeSubMenu($event)"
-class="section-bg  py-3 py-lg-2 fixed-top">
+class="section-bg  py-3 py-lg-1 fixed-top">
     <div 
     *ngIf="glopalService?.navbar?.length"
     class="container">
@@ -62,20 +62,11 @@ class="section-bg  py-3 py-lg-2 fixed-top">
                         </div>
                     </li>
                     <!-- --- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </ul>
+                <ul 
+                
+                [class.d-none]="!openNav"
+                class="main   flex-lg-row d-lg-flex">
                     <li>
                         <a 
                         class="withlinks"
