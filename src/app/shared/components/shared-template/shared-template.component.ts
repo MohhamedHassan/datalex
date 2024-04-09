@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, QueryList, ViewChildren } from '@angular/core';
 import { MainContainerWithHeader } from '../../models/main-container-with-header';
 import { Taps } from '../../models/taps';
 import { MainSection } from '../../models/main-section';
@@ -17,6 +17,7 @@ export class SharedTemplateComponent  implements OnChanges{
   sections!:MainSection[]
   @Input() pageType:string=''
   constructor(private glopalService:GlopalService) {}
+  
  ngOnChanges(): void {
   if(this.pageType) {
    let aboutData$ =  this.glopalService.pages.pipe(

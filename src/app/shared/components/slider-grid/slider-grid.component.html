@@ -1,14 +1,12 @@
 <section class="container py-5">
+
     <h2 
-    *ngIf="headerTest"
-    class="main-heading mb-4 text-center">Services</h2>
-    <h2 
-    *ngIf="data?.header && !headerTest"
+    *ngIf="data?.header"
     class="main-heading mb-4 text-center">{{data.header | lang : data.header_ar}}</h2>
     <owl-carousel-o 
     *ngIf="data?.sections?.length"
     [options]="customOptions">
-        <ng-template *ngFor="let item of data.sections;let i = index" carouselSlide>
+        <ng-template *ngFor="let item of data.sections  | filterImages;let i = index" carouselSlide>
             <div 
             class="slideritem shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
                 <div>
@@ -32,9 +30,19 @@
                             <!-- May 20th 2020 -->
                         </span>
                         <a 
+                        *ngIf="!services"
                         class="maincolor date bold" 
                         [routerLink]="'/blog-details/'+item?.id">
-                        {{item?.button?.text | lang : item?.button?.text_ar}}
+                        <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
+                            {{'readmore'|translate}}
+                        </a>
+                        <a 
+                        *ngIf="services"
+                        class="maincolor date bold" 
+                        [queryParams]="{id:item?.id}"
+                        routerLink="/services">
+                        <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
+                            {{'readmore'|translate}}
                         </a>
                     </div>
                 </div>

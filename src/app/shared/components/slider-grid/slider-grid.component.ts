@@ -10,7 +10,7 @@ import { MainContainerWithHeader } from '../../models/main-container-with-header
 export class SliderGridComponent  {
   @ViewChildren('owlItem') owlItems!: QueryList<ElementRef>;
   @Input() data!:MainContainerWithHeader
-  @Input() headerTest:string=''
+  @Input() services=false
   customOptions: OwlOptions = {
     skip_validateItems: true,
     loop: false,

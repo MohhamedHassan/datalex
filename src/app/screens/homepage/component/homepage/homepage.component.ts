@@ -18,10 +18,12 @@ export class HomepageComponent {
   valueProposition!:MainContainerWithHeader
   images!:MainContainerWithHeader
   subscribtion!:Subscription
+  secondubscribtion!:Subscription
   nlpTools!:MainSection[]
   resources!:MainContainerWithHeader
   whatwedo!:MainContainerWithHeader
   taps!:Taps[]
+  services:any=[]
   constructor(private glopalService:GlopalService) {}
  ngOnInit(): void {
    let aboutData$ =  this.glopalService.pages.pipe(
@@ -56,9 +58,25 @@ export class HomepageComponent {
         if(res?.navbars?.length) this.taps = res?.navbars[0]?.navbar_items_container
       }
     )
+  let service$ =  this.glopalService.pages.pipe(
+    skipWhile(val=>val==null),
+    map(res =>   res?.find(item => item?.title== "Services")),
+  )
+  this.secondubscribtion =  service$.subscribe(
+    (res:{navbars:{navbar_items_container:any}[]})=>{
+      if(res.navbars?.length) {
+      
+        this.services=res.navbars[0]
+        this.services.sections=this.services?.navbar_items_container
+       // delete this.services?.navbar_items_container
+      }
+      
+    }
+  )
  }
  ngOnDestroy(): void {
    if(this.subscribtion)this.subscribtion.unsubscribe()
+    if(this.secondubscribtion)this.secondubscribtion.unsubscribe()
  }
 
 

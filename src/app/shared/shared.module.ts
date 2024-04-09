@@ -14,6 +14,7 @@ import { SharedTemplateComponent } from './components/shared-template/shared-tem
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { InputComponent } from './components/input/input.component';
 import { ErrComponent } from './components/err/err.component';
+import { FilterImagesPipe } from './pipes/filter-images.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { ErrComponent } from './components/err/err.component';
        SharedTemplateComponent,
        NotFoundComponent,
        InputComponent,
-       ErrComponent
+       ErrComponent,
+       FilterImagesPipe
   ],
   imports: [
     CommonModule,
@@ -53,6 +55,7 @@ import { ErrComponent } from './components/err/err.component';
     TranslateModule,
     SharedTemplateComponent,
     LangPipe,
+    FilterImagesPipe,
     NotFoundComponent,
     ErrComponent
   ]
