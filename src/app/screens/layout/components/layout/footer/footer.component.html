@@ -64,10 +64,16 @@
                         <h2>news letter</h2>  
                         <p class="p2">Subscribe our newsletter to get our latest
                             update & news</p> 
-                        <form class="my-2">
-                            <input type="text" placeholder="Your email address">
-                            <img src="assets/images/send-plane-2-fill.png" alt="send">
-                        </form>
+                        <div 
+                        
+                        class="form my-2">
+                            <input 
+                            [formControl]="email"
+                            type="text" placeholder="Your email address">
+                            <img 
+                            (click)="newsLetter()"
+                            src="assets/images/send-plane-2-fill.png" alt="send">
+                        </div>
                         <div 
                         *ngFor="let item of glopalService?.footer?.sections"
                        >
@@ -97,9 +103,12 @@
             *ngIf="glopalService.footer?.copyright"
             >
             <hr class="bg-white">
-            <p class="text-center m-0">
+            <p class="text-center m-0 d-flex align-items-center justify-content-center ">
                 <i class="fa-regular fa-copyright"></i>
-                {{glopalService.footer.copyright | lang :  glopalService.footer.copyright_ar}}
+                <span 
+                class="footerp mx-1"
+                innerHTML="{{glopalService.footer.copyright | lang :  glopalService.footer.copyright_ar}}" 
+                ></span>
             </p>
         </ng-container>
         </div>

@@ -1,0 +1,48 @@
+::ng-deep {
+    .show.accordion-button::after {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-left: auto;
+        content: "\f077" !important;
+        font-size: 24px !important;
+        font-family: FontAwesome;
+        background-image:  none !important;
+    }
+    .hide.accordion-button::after {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-left: auto;
+        content: "\f078" !important;
+        font-size: 24px !important;
+        font-family: FontAwesome;
+        background-image:  none !important;
+    }
+}
+.jobspopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 111111111111;
+    .content {
+        background-color: white;
+        border-radius: 15px;
+        width: 50%;
+        max-height: 80vh;
+        overflow: auto;
+    }
+    @media only screen and (max-width: 992px) {
+        .jobspopup {
+            .content {
+                width: 95%;
+            }
+        }
+    }
+}

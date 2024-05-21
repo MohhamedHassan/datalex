@@ -5,7 +5,9 @@ class="container home-images py-5">
     *ngIf="images?.header||images?.header_ar"
     class="text-center mb-5">
         <h2 class="mb-4 main-heading">{{images.header | lang : images.header_ar}}</h2>
-        <p class="blue-text">{{images.content | lang : images.content_ar}}</p>
+        <p 
+        innerHTML="{{images.content | lang : images.content_ar}}"
+        class="blue-text"></p>
     </article>
     <div 
     *ngIf=" images?.sections?.length"
@@ -13,7 +15,7 @@ class="container home-images py-5">
         <div 
         *ngFor="let item of images.sections"
         class="col-6 col-md-3 mb-4 mb-md-0 text-center">
-                <div>
+                <div class="logosimgs">
                     <img 
                     [class.mb-4]="item?.header"
                     [src]="item?.image?.image" alt="DataLex4ai" class="img-fluid ">

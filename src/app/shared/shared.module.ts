@@ -15,6 +15,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { InputComponent } from './components/input/input.component';
 import { ErrComponent } from './components/err/err.component';
 import { FilterImagesPipe } from './pipes/filter-images.pipe';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -30,12 +33,15 @@ import { FilterImagesPipe } from './pipes/filter-images.pipe';
        NotFoundComponent,
        InputComponent,
        ErrComponent,
-       FilterImagesPipe
+       FilterImagesPipe,
+       BreadcrumbComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     CarouselModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     TranslateModule.forChild({
       defaultLanguage:'en',
       loader: {
@@ -57,7 +63,9 @@ import { FilterImagesPipe } from './pipes/filter-images.pipe';
     LangPipe,
     FilterImagesPipe,
     NotFoundComponent,
-    ErrComponent
+    ErrComponent,
+    BreadcrumbComponent,
+    ToastrModule
   ]
 })
 export class SharedModule { }

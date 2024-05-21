@@ -51,4 +51,13 @@ export class GlopalService{
       this.bodyPaddingTop=`${navheight}px`
     }, 0);
   }
+  newsLetter(body:any) {
+    return this.http.post(`https://datalex4ai.rdi-eg.ai/data/news-letter/`,body)
+  }
+  contactUs(body:any) {
+    return this.http.post(`https://datalex4ai.rdi-eg.ai/data/contact-us/`,body)
+  }
+  applyJob(body:any) {
+    return this.http.post(`https://datalex4ai.rdi-eg.ai/data/comment/`,body)
+  }
 }

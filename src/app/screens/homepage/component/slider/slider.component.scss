@@ -13,4 +13,20 @@
         }
     }
     .owl-itme {height: 100%;}
+    .sliderContent {
+        p{
+            font-size: 1.2rem;
+            strong {
+                font-size: 2rem;
+            }
+        }
+        
+
+    }
+    .sliderImgs {
+        img {
+            height: 25rem;
+            object-fit: contain;
+        }
+    }
 }

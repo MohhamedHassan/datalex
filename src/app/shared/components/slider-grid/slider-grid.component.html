@@ -10,7 +10,7 @@
             <div 
             class="slideritem shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
                 <div>
-                    <div>
+                    <div class="imgSection">
                         <img 
                         (load)="imageLoadingDone(i)"
                         [src]="item?.image?.image" alt="Resources" class="img-fluid">
@@ -19,7 +19,7 @@
                         <h3 class="sub-heading sub-heading-small">
                             {{item.header | lang : item.header_ar}}</h3>
                         <p class="main-text2 mb-0">    
-                              {{(item.content | lang : item.content_ar)|slice:0:200}} 
+                              {{(item.description | lang : item.description)|slice:0:200}} 
                               ...
                         </p>
                     </div>
@@ -39,8 +39,7 @@
                         <a 
                         *ngIf="services"
                         class="maincolor date bold" 
-                        [queryParams]="{id:item?.id}"
-                        routerLink="/services">
+                        [routerLink]="['/service-details',item?.id]">
                         <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
                             {{'readmore'|translate}}
                         </a>

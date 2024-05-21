@@ -1,27 +1,27 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription, map, skipWhile, switchMap } from 'rxjs';
-import { Resources } from 'src/app/screens/models/resources';
-import { MainContainerWithHeader } from 'src/app/shared/models/main-container-with-header';
-import { MainSection } from 'src/app/shared/models/main-section';
+import { Component, OnInit, inject } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, skipWhile } from 'rxjs';
 import { GlopalService } from 'src/app/shared/services/glopal.service';
 
 @Component({
-  selector: 'app-blog-details',
-  templateUrl: './blog-details.component.html',
-  styleUrls: ['./blog-details.component.scss']
+  selector: 'app-service-details',
+  templateUrl: './service-details.component.html',
+  styleUrls: ['./service-details.component.scss']
 })
-export class BlogDetailsComponent {
+export class ServiceDetailsComponent implements OnInit {
   glopalService = inject(GlopalService)
   router = inject(ActivatedRoute)
+  constructor(private sanitizer: DomSanitizer) {}
   serviceDetails:any
+  safe:any
     services:any
     ngOnInit(): void {
       this.router.params.subscribe((res:any)=> {
         let id = res?.id
         let service$ =  this.glopalService.pages.pipe(
           skipWhile(val=>val==null),
-          map(res =>   res?.find(item => item?.title== "Blogs")),
+          map(res =>   res?.find(item => item?.title== "Services")),
         )
          service$.subscribe(
           (res:{navbars:{navbar_items_container:any}[]})=>{
@@ -31,6 +31,7 @@ export class BlogDetailsComponent {
               this.services.sections=this.services?.navbar_items_container
               if(this.services?.sections?.length) {
                 this.serviceDetails = this.services?.sections.find((i:any)=>i?.id==id)
+          this.safe=      this.sanitizer.bypassSecurityTrustHtml(this.lang=='ar' ? this.serviceDetails?.content_ar:this.serviceDetails?.content );
               } 
   
              // delete this.services?.navbar_items_container

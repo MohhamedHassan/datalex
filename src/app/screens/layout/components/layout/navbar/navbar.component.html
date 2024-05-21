@@ -50,6 +50,7 @@ class="section-bg  py-3 py-lg-1 fixed-top">
                         *ngIf="link.navbar_items?.length"
                         class="sub-menu">
                             <a  
+                            style="line-height: 25px;"
                             [routerLink]="item.link"
                             (click)="openNav=false;selcetedSubMenu=-1"
                             routerLinkActive="active"

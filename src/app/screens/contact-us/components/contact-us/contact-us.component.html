@@ -3,17 +3,38 @@
 <section class="py-5 container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form>
-                <app-input placeholder="first" label="first" />
-                <app-input placeholder="last" label="last" />
-                <app-input placeholder="business" label="business" />
-                <app-input placeholder="company" label="company" />
-                <app-input placeholder="job" label="job" />
-                <app-input placeholder="phone" label="phone" />
+            <form
+            (ngSubmit)=" submit()"
+            [formGroup]="form">
+                <app-input [frmControl]="form.get('first_name')" placeholder="first" label="first" />
+                <app-input [frmControl]="form.get('last_name')"  placeholder="last" label="last" />
+                <app-input [frmControl]="form.get('business_email')" placeholder="business" label="business" />
+                <app-input [frmControl]="form.get('company_name')" placeholder="company" label="company" />
+                <app-input [frmControl]="form.get('job_title')" placeholder="job" label="job" />
+                <app-input [frmControl]="form.get('phone_number')" placeholder="phone" label="phone" />
+                <div 
+                *ngIf="reasons?.length"
+                class="form-group mb-4">
+                    <label for="">{{'Reasonforthemessage'|translate}}</label>
+                    <select 
+                    formControlName="reason"
+                    class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option>{{'Reasonforthemessage'|translate}}</option>
+                        <option 
+                        *ngFor="let item of reasons"
+                        [value]="item?.header">
+                        {{item?.header | lang : item?.header_ar }}
+                        </option>
+                      </select>
+                </div>
                 <app-input 
+                [frmControl]="form.get('project_description')"
                 fieldType="textarea"
                 placeholder="Tellusabitaboutyourproject" label="Tellusabitaboutyourproject" />
-                <button class="auth mb-3">
+            
+                <button 
+                [disabled]="form.invalid"
+                class="auth mb-3">
                    {{'submit'|translate}}
                 </button>
             </form>

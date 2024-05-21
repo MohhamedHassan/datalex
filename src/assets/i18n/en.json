@@ -19,5 +19,13 @@
     "company":"Company Name",
     "job":"Job Title",
     "phone":"Phone Number",
-    "Tellusabitaboutyourproject":"Tell us a bit about your project"
+    "Tellusabitaboutyourproject":"Tell us a bit about your project",
+    "apply":"Apply Now",
+    "validemail":"Enter a valid email",
+    "required":"This field is required",
+    "Reasonforthemessage":"Reason for the message",
+    "name":"Full Name",
+    "emaill":"Email",
+    "comment":"Comment",
+    "cv":"Upload CV"
 }

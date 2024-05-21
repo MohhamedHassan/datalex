@@ -1,1 +1,53 @@
-<app-shared-template pageType="Jobs" />
+<app-breadcrumb title="{{services?.header | lang : services?.header_ar}}" />
+<section class="container py-5">
+  <div *ngIf="services?.sections?.length" class="accordion" id="accordionExample">
+    <div *ngFor="let item of services?.sections;let i = index" class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button [ngClass]="{'show': show!=i,'hide': show==i}" (click)="show==i?show=-1:show=i" class="accordion-button"
+          type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne">
+          {{item.header | lang : item.header_ar}}
+        </button>
+      </h2>
+      <div [class.show]="show==i" id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div innerHTML="{{item?.content | lang : item?.content_ar}}"></div>
+          <div class="my-2">
+            <button
+            (click)="selectedJobId=item?.id;reset()"
+            class="btn btn-primary">
+              {{'apply'|translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div 
+*ngIf="selectedJobId!=-1"
+class="jobspopup">
+  <div class="content p-4">
+    <h3 style="display: flex;justify-content: space-between;align-items: center;margin-bottom: 10px;">
+      {{'apply'|translate}} 
+      <i 
+      (click)="selectedJobId=-1"
+      style="cursor: pointer;" class="fa-solid fa-x"></i>
+    </h3>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <app-input [frmControl]="form.get('name')" placeholder="name" label="name" />
+      <app-input [frmControl]="form.get('email')" placeholder="email" label="email" />
+      <app-input [frmControl]="form.get('phone')" placeholder="phone" label="phone" />
+      <app-input [frmControl]="form.get('comment')" fieldType="textarea" placeholder="comment" label="comment" />
+      <div class="form-group mb-4">
+        <label class="mb-1 d-block" for="">{{'cv'|translate}}</label>
+        <input type="text" type="file" accept=".pdf,.doc,.docx" (change)="onFileSelected($event)" class="form-control">
+      </div>
+      <button [disabled]="form.invalid" class="auth">
+        {{'submit'|translate}}
+      </button>
+    </form>
+  </div>
+</div>

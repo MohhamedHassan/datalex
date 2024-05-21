@@ -10,4 +10,5 @@ export class InputComponent {
   @Input() placeholder:string=''
   @Input() type:string='text'
   @Input() fieldType='input'
+  @Input() frmControl:any
 }

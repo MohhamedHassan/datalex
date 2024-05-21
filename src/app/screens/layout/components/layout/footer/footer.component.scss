@@ -1,4 +1,10 @@
 footer {
+    ul {
+        list-style-type:none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+
+    }
     color: var(--white);
 
     a {
@@ -55,7 +61,7 @@ footer {
                 }
             }
         }
-        form {
+        div.form {
             %inputtext{
                 font-size: 1rem;
                 font-weight: 400;
@@ -90,7 +96,7 @@ footer {
 ::ng-deep {
     .rt {
         footer {
-            form {
+            div.form {
                 img {
                     right:  auto !important;
                     left: 3px !important;
@@ -98,4 +104,5 @@ footer {
             }
         }
     }
+    .footerp p {margin: 0;}
 }

@@ -20,7 +20,7 @@ export class HomepageComponent {
   subscribtion!:Subscription
   secondubscribtion!:Subscription
   nlpTools!:MainSection[]
-  resources!:MainContainerWithHeader
+  resources!:any
   whatwedo!:MainContainerWithHeader
   taps!:Taps[]
   services:any=[]
@@ -46,8 +46,8 @@ export class HomepageComponent {
           // 
           this.nlpTools = sections.find(item=>item?.title == "Home Section 3")?.sections || []
           // 
-          let resources = sections.find(item=>item?.title=='Home Section 4 - Resources')
-          if(resources) this.resources =  resources
+          // let resources = sections.find(item=>item?.title=='Home Section 4 - Resources')
+          // if(resources) this.resources =  resources
           //
           let whatwedo = sections.find(item=>item?.title=='Home Section 5 - What We Do?')
           if(whatwedo) this.whatwedo =  whatwedo
@@ -56,7 +56,7 @@ export class HomepageComponent {
           
         }
         if(res?.navbars?.length) this.taps = res?.navbars[0]?.navbar_items_container
-      }
+      }   
     )
   let service$ =  this.glopalService.pages.pipe(
     skipWhile(val=>val==null),
@@ -68,6 +68,21 @@ export class HomepageComponent {
       
         this.services=res.navbars[0]
         this.services.sections=this.services?.navbar_items_container
+       // delete this.services?.navbar_items_container
+      }
+      
+    }
+  )
+  let blogs$ =  this.glopalService.pages.pipe(
+    skipWhile(val=>val==null),
+    map(res =>   res?.find(item => item?.title== "Blogs")),
+  )
+  blogs$.subscribe(
+    (res:{navbars:{navbar_items_container:any}[]})=>{
+      if(res.navbars?.length) {
+      
+        this.resources=res.navbars[0]
+        this.resources.sections=this.resources?.navbar_items_container
        // delete this.services?.navbar_items_container
       }
       

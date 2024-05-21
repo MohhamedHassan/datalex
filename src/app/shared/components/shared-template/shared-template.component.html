@@ -5,19 +5,10 @@
         <section 
         *ngIf="pageData"
         class="why-us">
-                <h2 class="main-heading small" *ngIf="pageData?.header">{{pageData.header | lang : pageData.header_ar}}</h2>
-                <p 
-                *ngIf="pageData?.content || pageData?.content_ar"
-                class="main-text">
-                        {{pageData.content | lang  : pageData.content_ar}}
-                </p>
-                <p 
-                *ngIf="pageData?.content_2 || pageData?.content_2_ar"
-                class="main-text">
-                        {{pageData.content_2 | lang  : pageData.content_2_ar}}
-                </p>
+        <div    innerHTML="{{pageData.content | lang : pageData.content_ar}}"></div>
+         
             </section>
-            <ng-container *ngIf="sections?.length">
+            <!-- <ng-container *ngIf="sections?.length">
                 <section      
                 *ngFor="let item of sections"   
                 class="why-us">
@@ -32,7 +23,7 @@
                         </p>
                </section>
 
-            </ng-container>
+            </ng-container> -->
 
 </div>
 

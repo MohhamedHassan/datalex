@@ -61,11 +61,11 @@ export class SliderGridComponent  {
       item.nativeElement.style.height = maxHeight + 'px';
     });
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
-    setTimeout(() => {
-      this.setEqualHeight();
-     }, 0);
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event:any) {
+  //   setTimeout(() => {
+  //     this.setEqualHeight();
+  //    }, 0);
+  // }
 
 }

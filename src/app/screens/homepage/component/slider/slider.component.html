@@ -9,18 +9,21 @@ class="section-bg pt-5 pb-4" >
                 <div 
                 class="row align-items-center ">
                     <div class="col-md-6 mb-4 mb-md-0">
-                        <div>
-                            <h2 class="main-heading">{{item?.header | lang : item?.header_ar}}</h2>
-                            <p class="main-text">  {{item?.content | lang : item?.content_ar}}</p>
-                            <a 
+                        <div
+                        class="sliderContent"
+                        innerHTML="{{item?.content | lang : item?.content_ar}}"
+                        >
+                            <!-- <h2 class="main-heading">{{item?.header | lang : item?.header_ar}}</h2>
+                            <p class="main-text">  </p> -->
+                            <!-- <a 
                             *ngIf="item?.button"
                             [class.main-btn-small]="!btnBig"
                             [routerLink]="item?.button?.link" class="main-btn">
-                            {{item?.button?.text | lang : item?.button?.text_ar}}</a>
+                            {{item?.button?.text | lang : item?.button?.text_ar}}</a> -->
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="text-center">
+                        <div class="text-center sliderImgs">
                             <img [src]="item?.image?.image"  alt="datalex4ai" class="img-fluid">
                         </div>
                     </div>

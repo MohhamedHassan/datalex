@@ -19,5 +19,13 @@
     "company":"اسم الشركة ",
     "job":"الوظيفة",
     "phone":"رقم الهاتف",
-    "Tellusabitaboutyourproject":"أخبرنا عن نفسك"
+    "Tellusabitaboutyourproject":"أخبرنا عن نفسك",
+    "apply":"التقديم علي الوظيفة",
+    "validemail":"أدخل بريد الكتروني صالح",
+    "required":"هذا الحقل مطلوب",
+    "Reasonforthemessage":"الغرض من الرسالة",
+    "name":"الاسم",
+    "emaill":"البريد الالكتروني",
+    "comment":"تعليق",
+    "cv":"تحميل السيرة الذاتية"
 }

@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
     document.body.classList.remove('rt')
   }
  }  
- @HostListener('window:resize', ['$event'])
- onResize(event:any) {
-  this.glopalService.bodyPaddingTop=`${document.querySelector('nav')?.offsetHeight}px`
- }
+//  @HostListener('window:resize', ['$event'])
+//  onResize(event:any) {
+//   this.glopalService.bodyPaddingTop=`${document.querySelector('nav')?.offsetHeight}px`
+//  }
 }

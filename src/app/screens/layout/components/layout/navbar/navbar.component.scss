@@ -1,9 +1,14 @@
 nav {
     border-bottom: 1px solid #edecec;
+    ul {
+        list-style-type:none ;
+        padding: 0 !important;
+        margin: 0 !important;
 
+    }
     .logo {
         img {
-            width: 6.25rem
+            width: 10rem
         }
     }
 
