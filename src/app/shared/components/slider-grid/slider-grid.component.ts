@@ -10,7 +10,8 @@ import { MainContainerWithHeader } from '../../models/main-container-with-header
 export class SliderGridComponent  {
   @ViewChildren('owlItem') owlItems!: QueryList<ElementRef>;
   @Input() data!:MainContainerWithHeader
-  @Input() services=false
+  @Input() type=0
+  @Input() seeall=false
   customOptions: OwlOptions = {
     skip_validateItems: true,
     loop: false,
@@ -37,35 +38,7 @@ export class SliderGridComponent  {
     rtl:localStorage.getItem('lang')=='ar' ? true : false
   }
   
-  imageLoadingDone(index:number) {
-    this.data.sections[index].load=true
-    let allImagesLoad = true
-    if(this.data?.sections?.length) {
-      this.data?.sections.forEach(item => {
-         if(!item.load) allImagesLoad=false
-      })
-      if(allImagesLoad) {
-        this.setEqualHeight()
-        
-      }
-    }
+  
 
-  }
-  setEqualHeight(): void {
-    let maxHeight = 0;
-    this.owlItems.forEach(item => {
-      const height = item.nativeElement.offsetHeight;
-      maxHeight = height > maxHeight ? height : maxHeight;
-    });
-    this.owlItems.forEach(item => {
-      item.nativeElement.style.height = maxHeight + 'px';
-    });
-  }
-  // @HostListener('window:resize', ['$event'])
-  // onResize(event:any) {
-  //   setTimeout(() => {
-  //     this.setEqualHeight();
-  //    }, 0);
-  // }
 
 }

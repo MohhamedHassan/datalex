@@ -42,7 +42,7 @@ export class ContactUsComponent  implements OnInit{
   job_title:['',Validators.required],
   phone_number:['',Validators.required],
   reason:['',Validators.required],
-  project_description:['',Validators.required],
+  project_description:[''],
    })
  }
  get lang() {

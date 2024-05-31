@@ -1,25 +1,41 @@
 <section class="container py-5">
 
-    <h2 
-    *ngIf="data?.header"
-    class="main-heading mb-4 text-center">{{data.header | lang : data.header_ar}}</h2>
+    <div 
+    *ngIf="data?.header && !seeall"
+    class="mb-4 align-items-center d-flex flex-wrap justify-content-between">
+        <h2 
+ 
+    class="main-heading mb-0">{{data.header | lang : data.header_ar}}</h2>
+    <a 
+    style="color: #DCAF3C;;"
+    [routerLink]="type==1 ? '/services' : type == 2 ? '/blogs' : '/products'"
+    >{{'seeall'|translate}}</a>
+    </div>
+    <div 
+    *ngIf="data?.header && seeall"
+    class="mb-4 text-center">
+        <h2 
+ 
+    class="main-heading text-center mb-0">{{data.header | lang : data.header_ar}}</h2>
+ 
+    </div>
     <owl-carousel-o 
     *ngIf="data?.sections?.length"
     [options]="customOptions">
-        <ng-template *ngFor="let item of data.sections  | filterImages;let i = index" carouselSlide>
+        <ng-template *ngFor="let item of data.sections;let i = index" carouselSlide>
             <div 
-            class="slideritem shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
+            class="slideritem h-100  shadowcstm my-2 d-flex flex-column justify-content-between" #owlItem>
                 <div>
                     <div class="imgSection">
                         <img 
-                        (load)="imageLoadingDone(i)"
-                        [src]="item?.image?.image" alt="Resources" class="img-fluid">
+                        *ngIf="item?.image?.image"
+                        [src]="item?.image?.image" alt="Services" class="img-fluid">
                     </div>
                     <div class="p-3">
                         <h3 class="sub-heading sub-heading-small">
                             {{item.header | lang : item.header_ar}}</h3>
                         <p class="main-text2 mb-0">    
-                              {{(item.description | lang : item.description)|slice:0:200}} 
+                              {{(item.description | lang : item.description_ar)|slice:0:200}} 
                               ...
                         </p>
                     </div>
@@ -30,16 +46,23 @@
                             <!-- May 20th 2020 -->
                         </span>
                         <a 
-                        *ngIf="!services"
+                        *ngIf="type==2"
                         class="maincolor date bold" 
                         [routerLink]="'/blog-details/'+item?.id">
                         <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
                             {{'readmore'|translate}}
                         </a>
                         <a 
-                        *ngIf="services"
+                        *ngIf="type==1"
                         class="maincolor date bold" 
                         [routerLink]="['/service-details',item?.id]">
+                        <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
+                            {{'readmore'|translate}}
+                        </a>
+                        <a 
+                        *ngIf="type==3"
+                        class="maincolor date bold" 
+                        [routerLink]="['/product-details',item?.id]">
                         <!-- {{item?.button?.text | lang : item?.button?.text_ar}}  -->
                             {{'readmore'|translate}}
                         </a>

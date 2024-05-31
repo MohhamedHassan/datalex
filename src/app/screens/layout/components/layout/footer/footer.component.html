@@ -32,7 +32,7 @@
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
                         <img [src]="glopalService.logo" alt="DataLex4ai" class="d-block mb-3" >   
-                        <p class="p2">Welcome to DataLex4ai where we seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services.</p> 
+                        <p class="p2">{{'welcome'|translate}}</p> 
                        <app-social-meedia color="white" />
                     </div>
                 </div>
@@ -61,15 +61,14 @@
                 <div 
                 class="col-md-4 mb-4 mb-md-0">
                     <div>
-                        <h2>news letter</h2>  
-                        <p class="p2">Subscribe our newsletter to get our latest
-                            update & news</p> 
+                        <h2>{{'newsletter'|translate}}</h2>  
+                        <p class="p2">{{'subscribe'|translate}}</p> 
                         <div 
                         
                         class="form my-2">
                             <input 
                             [formControl]="email"
-                            type="text" placeholder="Your email address">
+                            type="text" placeholder="{{'Youremailaddress'|translate}}">
                             <img 
                             (click)="newsLetter()"
                             src="assets/images/send-plane-2-fill.png" alt="send">
@@ -87,10 +86,12 @@
                                     [ngClass]="{'mb-2': item?.content_2,'mb-0':!item?.content_2}"
                                     *ngIf="item?.content ||item?.content_ar">
                                     {{item.content | lang : item.content_ar}}</p> -->
-                                    <p *ngIf="item?.content_2 || item?.content_2_ar" class="p2 mb-0 d-flex">
+                                    <p
+                                     *ngIf="item?.content || item?.content_ar" class="p2 mb-0 d-flex">
                                         {{item.header | lang :  item.header_ar  }}
                                         <span class="mx-2"></span>
-                                        {{item.content_2 | lang : item.content_2_ar  }}
+                                        <span       innerHTML="{{item.content | lang : item.content_ar }}" ></span>
+                  
                                     </p>
                          
                         </div>

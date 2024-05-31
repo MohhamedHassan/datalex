@@ -1,7 +1,8 @@
 ::ng-deep {
     .imgSection {
+        height: 15rem;
         img {
-            height: 15rem;
+            height: 100%;
             object-fit: cover;
         }
       }

@@ -22,7 +22,7 @@ export class SharedTemplateComponent  implements OnChanges{
   if(this.pageType) {
    let aboutData$ =  this.glopalService.pages.pipe(
       skipWhile(val=>val==null),
-      map(res =>   res?.find(item => item.title== this.pageType)),
+      map(res =>   res?.find(item => item?.title== this.pageType)),
     )
     this.subscribtion =  aboutData$.subscribe(
       (res:{main_section:MainContainerWithHeader;sections:MainSection[];navbars:{navbar_items_container:Taps[]}[]})=>{

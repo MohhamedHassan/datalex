@@ -9,7 +9,7 @@ import { MainSection } from 'src/app/shared/models/main-section';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
-  @Input() data!:MainSection[]
+  @Input() data!:any
   @Input() btnBig:boolean=false
   customOptions: OwlOptions = {
     loop: true,

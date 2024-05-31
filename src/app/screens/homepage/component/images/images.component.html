@@ -1,6 +1,6 @@
 <section
 *ngIf="images"
-class="container home-images py-5">
+class="container home-images pt-5">
     <article 
     *ngIf="images?.header||images?.header_ar"
     class="text-center mb-5">
@@ -14,7 +14,7 @@ class="container home-images py-5">
     class="row">
         <div 
         *ngFor="let item of images.sections"
-        class="col-6 col-md-3 mb-4 mb-md-0 text-center">
+        class="col-6 col-md-3 mb-4  text-center">
                 <div class="logosimgs">
                     <img 
                     [class.mb-4]="item?.header"

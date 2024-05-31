@@ -19,7 +19,7 @@
     "company":"Company Name",
     "job":"Job Title",
     "phone":"Phone Number",
-    "Tellusabitaboutyourproject":"Tell us a bit about your project",
+    "Tellusabitaboutyourproject":"Your Comment",
     "apply":"Apply Now",
     "validemail":"Enter a valid email",
     "required":"This field is required",
@@ -27,5 +27,11 @@
     "name":"Full Name",
     "emaill":"Email",
     "comment":"Comment",
-    "cv":"Upload CV"
+    "cv":"Upload CV",
+    "welcome":"Welcome to DataLex4ai where we seamlessly blend the precision of manual linguistic annotation with the efficiency of automated services.",
+    "newsletter":"news letter",
+    "subscribe":"Subscribe our newsletter to get our latest update & news",
+    "Youremailaddress":"Your email address",
+    "seeall":"See All",
+    "nodata":"No Data Found"
 }

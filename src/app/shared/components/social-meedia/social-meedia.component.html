@@ -5,7 +5,9 @@
         <a 
         target="_blank"
         *ngIf="link.enabled" [class]="color" [href]="link.url">
-            <i  [class]="link?.icon||'fa-solid fa-share'"></i>
+            <button class="btn btn-secondary">
+                <i  [class]="link?.icon||'fa-solid fa-share'"></i>
+            </button>
         </a>
     </li>
 </ul>

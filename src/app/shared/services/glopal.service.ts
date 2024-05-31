@@ -37,6 +37,7 @@ export class GlopalService{
   getPages() {
     return this.http.get<any[]>(`${this.apiUrl}page/list`).subscribe(
       res => {
+        console.log(res)
         this.pages.next(res)
         this.loading=false
       },err =>  {
@@ -58,6 +59,6 @@ export class GlopalService{
     return this.http.post(`https://datalex4ai.rdi-eg.ai/data/contact-us/`,body)
   }
   applyJob(body:any) {
-    return this.http.post(`https://datalex4ai.rdi-eg.ai/data/comment/`,body)
+    return this.http.post(`https://datalex4ai.rdi-eg.ai/data/job/`,body)
   }
 }

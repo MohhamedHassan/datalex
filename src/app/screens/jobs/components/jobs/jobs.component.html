@@ -51,3 +51,10 @@ class="jobspopup">
     </form>
   </div>
 </div>
+<div
+*ngIf="!services?.sections?.length"
+class="container">
+    <div class="alert alert-primary my-5 text-center" role="alert">
+        {{'nodata'|translate}}
+    </div>
+</div>

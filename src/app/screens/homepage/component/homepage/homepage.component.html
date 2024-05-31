@@ -1,11 +1,28 @@
-<app-slider 
+<!-- <app-slider 
 *ngIf="upperSlider?.length"
-[data]="upperSlider" [btnBig]="false" />
-<app-images [images]="images" />
+[data]="upperSlider" [btnBig]="false" /> -->
+<!-- <app-images [images]="images" /> -->
 <!-- <app-taps [data]="taps" /> -->
-<app-slider-grid [data]="services" [services]="true"  />
-<app-slider [data]="driver" />
-<app-images [images]="valueProposition"  />
-<app-slider [data]="nlpTools" />
-<app-slider-grid [data]="resources"  />
+
+<!-- <app-slider [data]="driver" /> -->
+<!-- <app-images [images]="valueProposition"  /> -->
+<!-- <app-slider [data]="nlpTools" /> -->
+<ng-container *ngIf="sections?.length">
+    <ng-container *ngFor="let item of sections">
+        <div *ngIf="item?.type=='Slider' && item?.sections?.length">
+            <app-slider [data]="item" />
+        </div>
+        <div *ngIf="item?.type=='logo' && item?.sections?.length">
+            <app-images [images]="item"  />
+        </div>
+        <div *ngIf="item?.type=='SliderGrid' && item?.sections?.length">
+            <app-slider-grid [seeall]="true" [data]="item" />
+        </div>
+
+    </ng-container>
+</ng-container>
+
+<app-slider-grid [data]="services" [type]="1"  />
+<app-slider-grid [data]="resources" [type]="2" />
+<app-slider-grid [data]="products"  [type]="3"/>
 <!-- <app-what-we-do [data]="whatwedo"  /> -->

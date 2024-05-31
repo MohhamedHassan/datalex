@@ -14,8 +14,10 @@ class="section-bg">
                 <div class="p-4 d-flex flex-column justify-content-between h-100">           
                     <div>
                         <h3 class="sub-heading">{{item?.header | lang : item?.header_ar}}</h3>
-                        <p class="blue-text">
-                            {{(item?.content | lang : item?.content_ar)|slice:0:200}} ...
+                        <p 
+                        innerHTML="{{(item.content | lang : item.content_ar)|slice:0:200}}"
+                        class="blue-text">
+                
                         </p>
                     </div>
                     <div *ngIf="item?.button">

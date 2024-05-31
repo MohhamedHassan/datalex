@@ -25,7 +25,7 @@ export class BlogDetailsComponent {
         )
          service$.subscribe(
           (res:{navbars:{navbar_items_container:any}[]})=>{
-            if(res.navbars?.length) {
+            if(res?.navbars?.length) {
             
               this.services=res.navbars[0]
               this.services.sections=this.services?.navbar_items_container

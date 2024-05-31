@@ -52,8 +52,10 @@ class="taps pb-5">
                     class="mb-4 mb-md-0">
                         <div>
                             <h3>{{link.header | lang : link.header_ar}}</h3>
-                            <p class="main-text">
-                              {{link.content | lang : link.content_ar}}     
+                            <p 
+                            innerHTML="{{link.content | lang : link.content_ar}}"
+                            class="main-text">
+                              <!-- {{link.content | lang : link.content_ar}}      -->
                             </p>
                         </div>
                     </div>

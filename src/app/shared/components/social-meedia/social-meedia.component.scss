@@ -12,13 +12,14 @@ ul.socialmedia {
        
 
         a {
-            padding-right: 1.3rem;
+            // padding-right: 1.3rem;
             margin-right: 1.3rem;
+            margin-bottom: .5rem;
             position: relative;
             display: inline-block;
             transition: .5s;
             &::after {
-                content: "";
+                // content: "";
                 position: absolute;
                 top: 2px;
                 right: 0;
@@ -28,6 +29,9 @@ ul.socialmedia {
             }
             &:hover {
                 color:var(--main) !important
+            }
+            i {
+                font-size:  1.5rem !important;
             }
         }
         a.white {
@@ -60,9 +64,9 @@ ul.socialmedia {
                
         
                 a {
-                    padding-right: 0 !important;
+                    // padding-right: 0 !important;
                     margin-right: 0 !important;
-                    padding-left: 1.3rem;
+                    // padding-left: 1.3rem;
                     margin-left: 1.3rem;
                     &::after {
                         right: auto !important;

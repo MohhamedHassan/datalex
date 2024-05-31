@@ -15,6 +15,7 @@ class="container my-5">
             <div>
                 <div class="imgSection">
                     <img 
+                    *ngIf="item?.image?.image"
                     [src]="item?.image?.image" alt="Resources" class="w-100">
                 </div>
                 <div class="p-3">
@@ -45,4 +46,12 @@ class="container my-5">
         </div>
     </div>
 </section>
+
+<div
+*ngIf="!services?.sections?.length"
+class="container">
+    <div class="alert alert-primary my-5 text-center" role="alert">
+        {{'nodata'|translate}}
+    </div>
+</div>
 <!-- <app-slider-grid [data]="services" [services]="true"  /> -->

@@ -1,9 +1,12 @@
 <section 
-*ngIf="data?.length"
+*ngIf="data"
 class="section-bg pt-5 pb-4" >
-    <owl-carousel-o [options]="customOptions">
+    <h2 *ngIf="data?.header" class="text-center main-heading">{{data?.header | lang : data?.header_ar}}</h2>
+    <owl-carousel-o
+    *ngIf="data?.sections?.length"
+    [options]="customOptions">
         <ng-template
-        *ngFor="let item of data"
+        *ngFor="let item of data.sections"
         carouselSlide>
             <div class="container">
                 <div 
