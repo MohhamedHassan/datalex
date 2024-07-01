@@ -15,7 +15,9 @@ class="section-bg  py-3 py-lg-1 fixed-top">
                     <a 
                     (click)="openNav=false;selcetedSubMenu=-1"
                     routerLink="/">
-                        <img [src]="glopalService.logo" alt="DataLex4ai">
+                        <img 
+                        (load)="glopalService.setPaddingTop()"
+                        [src]="glopalService.logo" alt="DataLex4ai">
                     </a>
                 </div>
                 <!--  -->
